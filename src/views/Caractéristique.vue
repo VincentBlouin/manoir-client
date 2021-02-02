@@ -1,5 +1,5 @@
 <template>
-  <v-row align-content="center" align="center" class="h-center">
+  <v-row align-content="center" align="center" class="h-center mt-8">
     <v-col cols="6" v-if="caracteristique !== null">
       <h1 v-html="caracteristique.title.rendered" class="pb-6"></h1>
       <div v-html="caracteristique.content.rendered" class="text-left body-1"></div>
@@ -19,7 +19,6 @@ export default {
   },
   mounted: async function () {
     const response = await Service.api().get('caracteristique?slug=' + this.$route.params.slug);
-    console.log(response.data[0]);
     this.caracteristique = response.data[0];
   }
 }

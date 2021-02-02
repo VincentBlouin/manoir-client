@@ -14,6 +14,11 @@ const routes = [
         path: '/caracteristique/:slug/',
         name: '',
         component: () => import('../views/Caractéristique')
+    },
+    {
+        path: '/:slug/',
+        name: '',
+        component: () => import('../views/Article')
     }
 ]
 
