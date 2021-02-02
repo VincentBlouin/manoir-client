@@ -21,6 +21,10 @@
   color: #c2794c !important;
 }
 
+.secondary-color {
+  color: #d5c2b4 !important;
+}
+
 //
 //.v-application--wrap {
 //  background-color: #d5c2b4;
@@ -42,6 +46,10 @@
 .vh-center {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+.h-center{
+  display: flex;
   justify-content: center;
 }
 

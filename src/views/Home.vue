@@ -39,7 +39,7 @@
       </v-col>
     </v-row>
 
-    <h1 class="manoir-font font-weight-thin mb-4">
+    <h1 class="manoir-font font-weight-thin mb-4 primary-color">
       En Images
     </h1>
 
@@ -73,8 +73,8 @@
       </v-col>
     </v-row>
 
-    <h1 class="manoir-font font-weight-thin mb-4 mt-12">
-      Nos Caractéristiques
+    <h1 class="manoir-font font-weight-thin mb-4 mt-12 primary-color">
+      Ce qui nous caractérise
     </h1>
 
     <v-row>
