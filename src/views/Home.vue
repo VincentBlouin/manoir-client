@@ -100,6 +100,33 @@
       </v-col>
     </v-row>
 
+    <h1 class="manoir-font font-weight-thin mb-4 mt-12 primary-color">
+      Ce que nous ne sommes pas
+    </h1>
+
+    <v-row>
+      <v-col cols="3"
+             v-for="nonCaracteristique in nonCaracteristiques"
+             :key="nonCaracteristique.id"
+      >
+        <v-card
+            class="mx-auto my-12"
+            max-width="374"
+            :to="nonCaracteristique.link"
+        >
+          <v-img
+              height="250"
+              v-if="nonCaracteristique._embedded"
+              :src="nonCaracteristique._embedded['wp:featuredmedia']['0'].source_url"
+          ></v-img>
+
+          <v-card-title v-html="nonCaracteristique.title.rendered"></v-card-title>
+
+          <v-card-text v-html="nonCaracteristique.acf.texte_court_pour_lapercu_de_la_caracteristique"></v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
     <h1 class="manoir-font font-weight-thin mt-12 primary-color">
       Articles des membres
     </h1>
@@ -142,6 +169,7 @@ export default {
     return {
       articles: [],
       caracteristiques: [],
+      nonCaracteristiques: [],
       images: [{
         src: "/maison-devant.jpg",
         // legend:"Vue de devant"
@@ -152,17 +180,24 @@ export default {
     }
   },
   mounted: async function () {
-    const response = await Service.api().get('posts?_embed');
+    let response = await Service.api().get('posts?_embed');
     this.articles = response.data.map((article) => {
       const url = new URL(article.link);
       article.link = url.pathname;
       return article;
     });
-    const carResponse = await Service.api().get('caracteristique?_embed');
-    this.caracteristiques = carResponse.data.map((caracteristique) => {
+    response = await Service.api().get('caracteristique?_embed');
+    this.caracteristiques = response.data.map((caracteristique) => {
       const url = new URL(caracteristique.link);
       caracteristique.link = url.pathname;
       return caracteristique;
+    });
+
+    response = await Service.api().get('non-caracteristique?_embed');
+    this.nonCaracteristiques = response.data.map((nonCaracteristique) => {
+      const url = new URL(nonCaracteristique.link);
+      nonCaracteristique.link = url.pathname;
+      return nonCaracteristique;
     });
   }
 }
