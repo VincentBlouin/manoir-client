@@ -99,14 +99,35 @@
         </v-card>
       </v-col>
     </v-row>
-    <!--    <v-card v-for="caracteristique in caracteristiques" :key="caracteristique.id" class="text-left">-->
-    <!--      <v-card-title v-html="caracteristique.title.rendered">-->
-    <!--      </v-card-title>-->
-    <!--    </v-card>-->
-    <v-card v-for="article in articles" :key="article.id" class="text-left">
-      <v-card-title v-html="article.title.rendered">
-      </v-card-title>
-    </v-card>
+
+    <h1 class="manoir-font font-weight-thin mt-12 primary-color">
+      Articles des membres
+    </h1>
+    <v-subheader class="vh-center text-h6 font-weight-regular mb-4">
+      Passés et présents
+    </v-subheader>
+
+    <v-row>
+      <v-col cols="3"
+             v-for="article in articles"
+             :key="article.id"
+      >
+        <v-card
+            class="mx-auto my-12"
+            max-width="374"
+            :to="article.link"
+        >
+          <v-img
+              height="250"
+              v-if="article._embedded"
+              :src="article._embedded['wp:featuredmedia']['0'].source_url"
+          ></v-img>
+
+          <v-card-title v-html="article.title.rendered"></v-card-title>
+          <v-card-text v-html="article.excerpt.rendered"></v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -131,8 +152,12 @@ export default {
     }
   },
   mounted: async function () {
-    const response = await Service.api().get('posts');
-    this.articles = response.data;
+    const response = await Service.api().get('posts?_embed');
+    this.articles = response.data.map((article) => {
+      const url = new URL(article.link);
+      article.link = url.pathname;
+      return article;
+    });
     const carResponse = await Service.api().get('caracteristique?_embed');
     this.caracteristiques = carResponse.data.map((caracteristique) => {
       const url = new URL(caracteristique.link);
