@@ -2,7 +2,7 @@
   <div class="home">
     <v-row class="vh-center pt-14 pb-4">
       <v-col cols="6">
-        <v-card flat class="pt-14 pb-14">
+        <v-card flat class="pt-14 pb-14" color="transparent">
           <v-card-title class="pt-0 pb-8 text-center font-weight-thin mt-6 text-center text-h2 vh-center">
             <!--            <h1 class="text-h2  font-weight-light mt-6 text-center" style="">-->
             <!--              Work on your personal <span style="white-space: nowrap">knowledge</span> graph-->
@@ -26,11 +26,11 @@
           </v-card-title>
           <v-card-actions class="pt-8">
             <v-spacer></v-spacer>
-            <v-btn class="primary-color" text x-large>
+            <v-btn color="secondary" text x-large>
               Nous recrutons
             </v-btn>
             <v-divider vertical class="mr-8 ml-8"></v-divider>
-            <v-btn class="primary-color" text x-large>
+            <v-btn color="secondary" text x-large>
               Prêt solidaire
             </v-btn>
             <v-spacer></v-spacer>
@@ -86,6 +86,7 @@
             class="mx-auto my-12"
             max-width="374"
             :to="caracteristique.link"
+            color="transparent"
         >
           <v-img
               height="250"
@@ -95,7 +96,7 @@
 
           <v-card-title v-html="caracteristique.title.rendered"></v-card-title>
 
-          <v-card-text v-html="caracteristique.acf.texte_court_pour_lapercu_de_la_caracteristique"></v-card-text>
+          <v-card-text v-html="caracteristique.acf.texte_court_pour_lapercu_de_la_caracteristique" class="body-1 text-left secondary-color"></v-card-text>
         </v-card>
       </v-col>
     </v-row>
@@ -113,6 +114,7 @@
             class="mx-auto my-12"
             max-width="374"
             :to="nonCaracteristique.link"
+            color="transparent"
         >
           <v-img
               height="250"
@@ -143,6 +145,7 @@
             class="mx-auto my-12"
             max-width="374"
             :to="article.link"
+            color="transparent"
         >
           <v-img
               height="250"
@@ -151,7 +154,7 @@
           ></v-img>
 
           <v-card-title v-html="article.title.rendered"></v-card-title>
-          <v-card-text v-html="article.excerpt.rendered"></v-card-text>
+          <v-card-text v-html="article.excerpt.rendered" class="body-1 text-left secondary-color"></v-card-text>
         </v-card>
       </v-col>
     </v-row>

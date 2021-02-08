@@ -1,48 +1,66 @@
 <template>
   <div id="app">
-    <v-app>
-      <v-app-bar app flat color="white">
+    <v-app    
+      :style="{
+        background: 'url(' + require('@/assets/noise3.jpg') + ')',
+        'background-repeat': 'repeat',
+      }"
+    >
+      <v-app-bar
+        app
+        flat
+        :style="{
+          background: 'url(' + require('@/assets/noise3.jpg') + ')',
+          'background-repeat': 'repeat',
+        }"
+      >
         <v-toolbar-title class="text-h4">
-          <router-link to="/" class="manoir-font" style="text-decoration: none;">
-            Le Manoir <span class="manoir-font" style="font-size:19px;">communauté intentionnelle</span>
+          <router-link to="/" class="manoir-font" style="text-decoration: none">
+            Le Manoir
+            <span class="manoir-font" style="font-size: 19px"
+              >communauté intentionnelle</span
+            >
           </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn text  color="primary" class="">
-            En Images
-          </v-btn>
+          <v-btn text color="secondary" class=""> En Images </v-btn>
           <v-divider vertical class="ml-2 mr-2"></v-divider>
-          <v-btn text  color="primary" class="">
-            Nos Caractéristiques
-          </v-btn>
+          <v-btn text color="secondary" class=""> Nos Caractéristiques </v-btn>
           <v-divider vertical class="ml-2 mr-2"></v-divider>
-          <v-btn text  color="primary" class="">
-            Articles des membres
-          </v-btn>
-          <v-btn dark color="primary" class="">
-            Prêt Solidaire
-          </v-btn>
-          <v-btn text color="primary" class="">
-            Nous recrutons
-          </v-btn>
+          <v-btn text color="secondary" class=""> Articles des membres </v-btn>
+          <v-btn dark color="secondary" class=""> Prêt Solidaire </v-btn>
+          <v-btn text color="secondary" class=""> Nous recrutons </v-btn>
         </v-toolbar-items>
       </v-app-bar>
-      <router-view class="pt-12"/>
+      <router-view class="pt-12" />
     </v-app>
   </div>
 </template>
 
-<style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+<script>
+export default {
+  computed: {
+    background: function () {
+      return "";
+      // return require("@assets/noise-texture.png")
+    },
+  },
+};
+</script>
 
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+body {
+}
 
 .primary-color {
   color: #c2794c !important;
 }
 
 .secondary-color {
-  color: #d5c2b4 !important;
+  color: #c25c4c !important;
 }
 
 //
@@ -51,7 +69,7 @@
 //}
 
 .manoir-font {
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
   letter-spacing: 2px;
 }
 
@@ -84,6 +102,16 @@
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+}
+
+.post-content  {
+  img{
+    max-width: 100%;
+    
+  }
+  *{
+    line-height: 2;
   }
 }
 </style>

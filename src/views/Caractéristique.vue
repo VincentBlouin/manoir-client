@@ -1,8 +1,14 @@
 <template>
   <v-row align-content="center" align="center" class="h-center mt-8">
-    <v-col cols="6" v-if="caracteristique !== null">
-      <h1 v-html="caracteristique.title.rendered" class="pb-6"></h1>
-      <div v-html="caracteristique.content.rendered" class="text-left body-1"></div>
+    <v-col cols="5" v-if="caracteristique !== null">
+      <v-img
+        contain
+        max-height="600"
+        v-if="caracteristique._embedded"
+        :src="caracteristique._embedded['wp:featuredmedia']['0'].source_url"
+      ></v-img>
+      <h1 v-html="caracteristique.title.rendered" class="pb-6 pt-6"></h1>
+      <div v-html="caracteristique.content.rendered" class="text-left body-1 post-content"></div>
     </v-col>
   </v-row>
 </template>
@@ -18,7 +24,7 @@ export default {
     };
   },
   mounted: async function () {
-    const response = await Service.api().get('caracteristique?slug=' + this.$route.params.slug);
+    const response = await Service.api().get('caracteristique?_embed&slug=' + this.$route.params.slug);
     this.caracteristique = response.data[0];
   }
 }
