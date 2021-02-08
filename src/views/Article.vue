@@ -1,10 +1,6 @@
 <template>
-  <v-row
-    align-content="center"
-    align="center"
-    class="h-center mt-8"
-  >
-    <v-col cols="5" v-if="article !== null" >
+  <v-row align-content="center" align="center" class="h-center mt-8">
+    <v-col cols="12" sm="9" md="7" lg="6" xl="5" v-if="article !== null">
       <v-img
         contain
         max-height="600"
@@ -14,7 +10,7 @@
       <h1 v-html="article.title.rendered" class="pb-6 pt-6"></h1>
       <div
         v-html="article.content.rendered"
-        class="text-left body-1 post-content"
+        class="text-left body-1 post-content bigger-font"
       ></div>
     </v-col>
   </v-row>

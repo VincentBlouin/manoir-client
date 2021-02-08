@@ -8,7 +8,7 @@
         :src="caracteristique._embedded['wp:featuredmedia']['0'].source_url"
       ></v-img>
       <h1 v-html="caracteristique.title.rendered" class="pb-6 pt-6"></h1>
-      <div v-html="caracteristique.content.rendered" class="text-left body-1 post-content"></div>
+      <div v-html="caracteristique.content.rendered" class="text-left body-1 post-content bigger-font"></div>
     </v-col>
   </v-row>
 </template>

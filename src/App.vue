@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-app    
+    <v-app
       :style="{
         background: 'url(' + require('@/assets/noise3.jpg') + ')',
         'background-repeat': 'repeat',
@@ -17,7 +17,10 @@
         <v-toolbar-title class="text-h4">
           <router-link to="/" class="manoir-font" style="text-decoration: none">
             Le Manoir
-            <span class="manoir-font" style="font-size: 19px"
+            <span
+              class="manoir-font"
+              style="font-size: 19px"
+              v-if="$vuetify.breakpoint.mdAndUp"
               >communauté intentionnelle</span
             >
           </router-link>
@@ -105,16 +108,24 @@ body {
   }
 }
 
-.post-content  {
-  img{
+.post-content {
+  img {
     max-width: 100%;
-    
   }
-  *{
+  * {
     line-height: 2;
   }
-  p, li {
-    font-size:1.25em;
+}
+
+.bigger-font {
+  &.post-content {
+    p,
+    li {
+      font-size: 1.25em;
+    }
+  }
+  &.v-card__text p {
+    font-size: 1.1em;
   }
 }
 </style>
