@@ -113,5 +113,8 @@ body {
   *{
     line-height: 2;
   }
+  p, li {
+    font-size:1.25em;
+  }
 }
 </style>
