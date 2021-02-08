@@ -6,7 +6,7 @@
         <v-col cols="12" class="text-left font-italic">
           <!-- <v-divider vertical class="float-left mr-4 ml-2" color="secondary"></v-divider> -->
           <span v-if="article._embedded.author[0].name === 'montnoir'">
-            Anonnyme,
+            Anonyme,
           </span>
           <span v-else> {{ article._embedded.author[0].name }},</span>        
           <span class="ml-2">

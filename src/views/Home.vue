@@ -201,46 +201,55 @@
           class="mx-auto my-12"
           max-width="374"
           :to="article.link"
-          color="transparent"
+          style="background: rgb(255 255 255 / 15%)"
         >
           <v-img
             height="250"
-            v-if="article._embedded"
+            v-if="article._embedded['wp:featuredmedia']"
             :src="article._embedded['wp:featuredmedia']['0'].source_url"
           ></v-img>
 
           <v-card-title
             v-html="article.title.rendered"
-            class="text-left"
+            class="text-left secondary-color"
           ></v-card-title>
-          <v-card-subtitle class="text-left">
+          <v-card-subtitle class="text-left" v-if="article._embedded.author">
             <span v-if="article._embedded.author[0].name === 'montnoir'">
-              Anonnyme
+              Anonnyme,
             </span>
             <span v-else>
-              {{ article._embedded.author[0].name }}
-            </span>        
+              {{ article._embedded.author[0].name }},
+            </span>
+            <span>
+              {{ article.dateFormatted }}
+            </span>
           </v-card-subtitle>
           <v-card-text
             v-html="article.excerpt.rendered"
-            class="body-1 text-left secondary-color bigger-font"
+            class="body-1 text-left bigger-font"
           ></v-card-text>
         </v-card>
       </v-col>
     </v-row>
+    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Service from "@/Service";
+import InfiniteLoading from "vue-infinite-loading";
+import DateUtil from "@/DateUtil";
 
 export default {
   name: "Home",
-  components: {},
+  components: {
+    InfiniteLoading,
+  },
   data: function () {
     return {
       articles: [],
+      articlesPage: 0,
       caracteristiques: [],
       nonCaracteristiques: [],
       images: [
@@ -255,14 +264,28 @@ export default {
       ],
     };
   },
+  methods: {
+    infiniteHandler: async function ($state) {
+      const response = await Service.api().get(
+        "posts?_embed&per_page=8&offset=" + this.articlesPage * 8
+      );
+      const articles = response.data.map((article) => {
+        const url = new URL(article.link);
+        article.link = url.pathname;
+        article.dateFormatted = DateUtil.fromNow(new Date(article.date));
+        return article;
+      });
+      if (articles.length) {
+        this.articlesPage += 1;
+        this.articles.push(...articles);
+        $state.loaded();
+      } else {
+        $state.complete();
+      }
+    },
+  },
   mounted: async function () {
-    let response = await Service.api().get("posts?_embed");
-    this.articles = response.data.map((article) => {
-      const url = new URL(article.link);
-      article.link = url.pathname;
-      return article;
-    });
-    response = await Service.api().get("caracteristique?_embed");
+    let response = await Service.api().get("caracteristique?_embed");
     this.caracteristiques = response.data.map((caracteristique) => {
       const url = new URL(caracteristique.link);
       caracteristique.link = url.pathname;
