@@ -24,7 +24,7 @@
             <!--              Benefit from the power of the underlying graph database that allows you to create links between your ideas, to merge them, to restructure them, in short to make them evolve.-->
             <!--            </h4>-->
             <h4
-              class="text-h6 font-weight-regular text-center"
+              class="text-h6 font-weight-regular text-justify"
               style="line-height: 2"
             >
               Communauté intentionnelle à partage de revenu, dans la Baie des
@@ -209,7 +209,18 @@
             :src="article._embedded['wp:featuredmedia']['0'].source_url"
           ></v-img>
 
-          <v-card-title v-html="article.title.rendered"></v-card-title>
+          <v-card-title
+            v-html="article.title.rendered"
+            class="text-left"
+          ></v-card-title>
+          <v-card-subtitle class="text-left">
+            <span v-if="article._embedded.author[0].name === 'montnoir'">
+              Anonnyme
+            </span>
+            <span v-else>
+              {{ article._embedded.author[0].name }}
+            </span>        
+          </v-card-subtitle>
           <v-card-text
             v-html="article.excerpt.rendered"
             class="body-1 text-left secondary-color bigger-font"

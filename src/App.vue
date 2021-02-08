@@ -19,8 +19,9 @@
             Le Manoir
             <span
               class="manoir-font"
-              style="font-size: 19px"
-              v-if="$vuetify.breakpoint.mdAndUp"
+              :style="{
+                'font-size': communauteFontSize,
+              }"                        
               >communauté intentionnelle</span
             >
           </router-link>
@@ -47,6 +48,13 @@ export default {
     background: function () {
       return "";
       // return require("@assets/noise-texture.png")
+    },
+    communauteFontSize: function () {
+      if (this.$vuetify.breakpoint.mdAndUp) {
+        return "19px";
+      } else {
+        return "12px";
+      }
     },
   },
 };
@@ -127,5 +135,8 @@ body {
   &.v-card__text p {
     font-size: 1.1em;
   }
+}
+.v-card__title {
+  word-break: inherit !important;
 }
 </style>
