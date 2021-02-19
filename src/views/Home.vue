@@ -118,7 +118,7 @@
           class="mx-auto my-12"
           max-width="374"
           :to="caracteristique.link"
-          color="transparent"
+          style="background: rgb(255 255 255 / 15%)"
         >
           <v-img
             height="250"
@@ -156,7 +156,7 @@
           class="mx-auto my-12"
           max-width="374"
           :to="nonCaracteristique.link"
-          color="transparent"
+          style="background: rgb(255 255 255 / 15%)"
         >
           <v-img
             height="250"
