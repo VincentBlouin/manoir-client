@@ -8,7 +8,10 @@
         :src="caracteristique._embedded['wp:featuredmedia']['0'].source_url"
       ></v-img>
       <h1 v-html="caracteristique.title.rendered" class="pb-6 pt-6"></h1>
-      <div v-html="caracteristique.content.rendered" class="text-left body-1 post-content bigger-font"></div>
+      <div
+        v-html="caracteristique.content.rendered"
+        class="text-left body-1 post-content bigger-font"
+      ></div>
     </v-col>
   </v-row>
 </template>
@@ -20,16 +23,21 @@ export default {
   name: "Caractéristique.vue",
   data: function () {
     return {
-      caracteristique: null
+      caracteristique: null,
     };
   },
   mounted: async function () {
-    const response = await Service.api().get('caracteristique?_embed&slug=' + this.$route.params.slug);
+    const postType =
+      this.$route.name === "Caracteristique"
+        ? "caracteristique"
+        : "non-caracteristique";
+    const response = await Service.api().get(
+      postType + "?_embed&slug=" + this.$route.params.slug
+    );
     this.caracteristique = response.data[0];
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
-
 </style>

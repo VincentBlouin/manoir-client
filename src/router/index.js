@@ -12,7 +12,12 @@ const routes = [
     },
     {
         path: '/caracteristique/:slug/',
-        name: '',
+        name: 'Caracteristique',
+        component: () => import('../views/Caractéristique')
+    },
+    {
+        path: '/non-caracteristique/:slug/',
+        name: 'NonCaracteristique',
         component: () => import('../views/Caractéristique')
     },
     {

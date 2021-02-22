@@ -101,87 +101,7 @@
         </v-carousel>
       </v-col>
     </v-row>
-
-    <h1 class="manoir-font font-weight-thin mb-4 mt-12 primary-color">
-      Ce qui nous caractérise
-    </h1>
-
-    <v-row>
-      <v-col
-        cols="12"
-        md="4"
-        lg="3"
-        v-for="caracteristique in caracteristiques"
-        :key="caracteristique.id"
-      >
-        <v-card
-          class="mx-auto my-12"
-          max-width="374"
-          :to="caracteristique.link"
-          style="background: rgb(255 255 255 / 15%)"
-        >
-          <v-img
-            height="250"
-            v-if="caracteristique._embedded"
-            :src="caracteristique._embedded['wp:featuredmedia']['0'].source_url"
-          ></v-img>
-
-          <v-card-title v-html="caracteristique.title.rendered"></v-card-title>
-
-          <v-card-text class="body-1 text-left secondary-color bigger-font">
-            <p
-              v-html="
-                caracteristique.acf
-                  .texte_court_pour_lapercu_de_la_caracteristique
-              "
-            ></p>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-
-    <h1 class="manoir-font font-weight-thin mb-4 mt-12 primary-color">
-      Ce que nous ne sommes pas
-    </h1>
-
-    <v-row>
-      <v-col
-        cols="12"
-        md="4"
-        lg="3"
-        v-for="nonCaracteristique in nonCaracteristiques"
-        :key="nonCaracteristique.id"
-      >
-        <v-card
-          class="mx-auto my-12"
-          max-width="374"
-          :to="nonCaracteristique.link"
-          style="background: rgb(255 255 255 / 15%)"
-        >
-          <v-img
-            height="250"
-            v-if="nonCaracteristique._embedded"
-            :src="
-              nonCaracteristique._embedded['wp:featuredmedia']['0'].source_url
-            "
-          ></v-img>
-
-          <v-card-title
-            v-html="nonCaracteristique.title.rendered"
-          ></v-card-title>
-
-          <v-card-text class="body-1 bigger-font">
-            <p
-              v-html="
-                nonCaracteristique.acf
-                  .texte_court_pour_lapercu_de_la_caracteristique
-              "
-            ></p
-          ></v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-
+    <Caracteristiques></Caracteristiques>
     <h1 class="manoir-font font-weight-thin mt-12 primary-color">
       Articles des membres
     </h1>
@@ -217,9 +137,7 @@
             <span v-if="article._embedded.author[0].name === 'montnoir'">
               Anonnyme,
             </span>
-            <span v-else>
-              {{ article._embedded.author[0].name }},
-            </span>
+            <span v-else> {{ article._embedded.author[0].name }}, </span>
             <span>
               {{ article.dateFormatted }}
             </span>
@@ -245,13 +163,12 @@ export default {
   name: "Home",
   components: {
     InfiniteLoading,
+    Caracteristiques: () => import("@/views/Caractéristiques"),
   },
   data: function () {
     return {
       articles: [],
-      articlesPage: 0,
-      caracteristiques: [],
-      nonCaracteristiques: [],
+      articlesPage: 0,    
       images: [
         {
           src: "/maison-devant.jpg",
@@ -285,19 +202,7 @@ export default {
     },
   },
   mounted: async function () {
-    let response = await Service.api().get("caracteristique?_embed");
-    this.caracteristiques = response.data.map((caracteristique) => {
-      const url = new URL(caracteristique.link);
-      caracteristique.link = url.pathname;
-      return caracteristique;
-    });
-
-    response = await Service.api().get("non-caracteristique?_embed");
-    this.nonCaracteristiques = response.data.map((nonCaracteristique) => {
-      const url = new URL(nonCaracteristique.link);
-      nonCaracteristique.link = url.pathname;
-      return nonCaracteristique;
-    });
+    
   },
 };
 </script>
