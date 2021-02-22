@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div
+    :class="{
+      'pt-16': isOnPageFlow,
+      'pb-16': isOnPageFlow,
+    }"
+  >
     <h1 class="manoir-font font-weight-thin mb-4 mt-12 primary-color">
       Ce qui nous caractérise
     </h1>
@@ -40,8 +45,14 @@
         <v-progress-circular color="primary" large></v-progress-circular>
       </v-col>
       <v-col cols="12">
-        <v-btn @click="caracteristiquesLoadMore()" color="primary" text :disabled="!caracteristiqueHasMore" class="font-weight-bold">        
-          caractéristiques suivantes        
+        <v-btn
+          @click="caracteristiquesLoadMore()"
+          color="primary"
+          text
+          :disabled="!caracteristiqueHasMore"
+          class="font-weight-bold"
+        >
+          caractéristiques suivantes
           <v-icon right>navigate_next</v-icon>
         </v-btn>
       </v-col>
@@ -87,6 +98,21 @@
           ></v-card-text>
         </v-card>
       </v-col>
+      <v-col cols="12" v-if="nonCaracteristiqueLoading">
+        <v-progress-circular color="primary" large></v-progress-circular>
+      </v-col>
+      <v-col cols="12">
+        <v-btn
+          @click="nonCaracteristiquesLoadMore()"
+          color="primary"
+          text
+          :disabled="!nonCaracteristiqueHasMore"
+          class="font-weight-bold"
+        >
+          non caractéristiques suivantes
+          <v-icon right>navigate_next</v-icon>
+        </v-btn>
+      </v-col>
     </v-row>
   </div>
 </template>
@@ -108,9 +134,11 @@ export default {
       nonCaracteristiqueHasMore: true,
       caracteristiqueLoading: false,
       nonCaracteristiqueLoading: false,
+      isOnPageFlow: false,
     };
   },
   mounted: async function () {
+    this.isOnPageFlow = this.$route.name === "Caracteristiques";
     this.caracteristiquesLoadMore();
     this.nonCaracteristiquesLoadMore();
   },
@@ -142,7 +170,8 @@ export default {
       if (entries.length) {
         this[contentType + "Page"] += 1;
         this[contentType + "s"].push(...entries);
-      } else {
+      }
+      if (entries.length < this.nbPerPage) {
         this[contentType + "HasMore"] = false;
       }
       this[contentType + "Loading"] = false;

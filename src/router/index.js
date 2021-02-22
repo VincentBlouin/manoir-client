@@ -21,10 +21,15 @@ const routes = [
         component: () => import('../views/Caractéristique')
     },
     {
+        path: '/caracteristiques',
+        name: 'Caracteristiques',
+        component: () => import('../views/Caractéristiques')
+    },
+    {
         path: '/:slug/',
-        name: '',
+        name: 'Articles',
         component: () => import('../views/Article')
-    }
+    },
 ]
 
 const router = new VueRouter({
