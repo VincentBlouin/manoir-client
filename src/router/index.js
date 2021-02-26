@@ -26,6 +26,11 @@ const routes = [
         component: () => import('../views/Caractéristiques')
     },
     {
+        path: '/articles',
+        name: 'Articles',
+        component: () => import('../views/Articles')
+    },
+    {
         path: '/:slug/',
         name: 'Articles',
         component: () => import('../views/Article')

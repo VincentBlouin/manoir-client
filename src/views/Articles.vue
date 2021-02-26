@@ -1,0 +1,106 @@
+<template>
+  <div
+    :class="{
+      'pt-16': isOnPageFlow,
+      'pb-16': isOnPageFlow,
+    }"
+  >
+    <h1 class="manoir-font font-weight-thin mt-12 primary-color">
+      Articles des membres
+    </h1>
+    <v-subheader class="vh-center text-h6 font-weight-regular mb-4">
+      Passés et présents
+    </v-subheader>
+
+    <v-row>
+      <v-col
+        cols="12"
+        md="4"
+        lg="3"
+        v-for="article in articles"
+        :key="article.id"
+      >
+        <v-card
+          class="mx-auto my-12"
+          max-width="374"
+          :to="article.link"
+          style="background: rgb(255 255 255 / 15%)"
+        >
+          <v-img
+            height="250"
+            v-if="article._embedded['wp:featuredmedia']"
+            :src="article._embedded['wp:featuredmedia']['0'].source_url"
+          ></v-img>
+
+          <v-card-title
+            v-html="article.title.rendered"
+            class="text-left secondary-color"
+          ></v-card-title>
+          <v-card-subtitle class="text-left" v-if="article._embedded.author">
+            <span v-if="article._embedded.author[0].name === 'montnoir'">
+              Anonyme,
+            </span>
+            <span v-else> {{ article._embedded.author[0].name }}, </span>
+            <span>
+              {{ article.dateFormatted }}
+            </span>
+          </v-card-subtitle>
+          <v-card-text
+            v-html="article.excerpt.rendered"
+            class="body-1 text-left bigger-font"
+          ></v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+    <infinite-loading @infinite="infiniteHandler">
+      <div slot="no-more">Fin des articles</div>
+      <div slot="no-results">Fin des articles</div>
+    </infinite-loading>
+  </div>
+</template>
+
+<script>
+import Service from "@/Service";
+import InfiniteLoading from "vue-infinite-loading";
+import DateUtil from "@/DateUtil";
+
+export default {
+  name: "Articles.vue",
+  components: {
+    InfiniteLoading,
+  },
+  data: function () {
+    return {
+      articles: [],
+      articlesPage: 0,
+      isOnPageFlow: false,
+    };
+  },
+  mounted: function () {
+    this.isOnPageFlow = this.$route.name === "Articles";
+  },
+  methods: {
+    infiniteHandler: async function ($state) {
+      const response = await Service.api().get(
+        "posts?_embed&per_page=8&offset=" + this.articlesPage * 8
+      );
+      const articles = response.data.map((article) => {
+        const url = new URL(article.link);
+        article.link = url.pathname;
+        article.dateFormatted = DateUtil.fromNow(new Date(article.date));
+        return article;
+      });
+      if (articles.length) {
+        this.articlesPage += 1;
+        this.articles.push(...articles);
+        $state.loaded();
+      } else {
+        $state.complete();
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+</style>

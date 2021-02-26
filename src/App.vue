@@ -21,7 +21,7 @@
               class="manoir-font"
               :style="{
                 'font-size': communauteFontSize,
-              }"                        
+              }"
               >communauté intentionnelle</span
             >
           </router-link>
@@ -30,9 +30,13 @@
         <v-toolbar-items class="hidden-sm-and-down">
           <v-btn text color="secondary" class=""> En Images </v-btn>
           <v-divider vertical class="ml-2 mr-2"></v-divider>
-          <v-btn text color="secondary" class="" to="/caracteristiques"> Nos Caractéristiques </v-btn>
+          <v-btn text color="secondary" class="" to="/caracteristiques"
+            >Nos Caractéristiques</v-btn
+          >
           <v-divider vertical class="ml-2 mr-2"></v-divider>
-          <v-btn text color="secondary" class=""> Articles des membres </v-btn>
+          <v-btn text color="secondary" class="" to="/articles">
+            Articles des membres
+          </v-btn>
           <v-btn dark color="secondary" class=""> Prêt Solidaire </v-btn>
           <v-btn text color="secondary" class=""> Nous recrutons </v-btn>
         </v-toolbar-items>
