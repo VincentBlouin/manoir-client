@@ -34,8 +34,7 @@
           </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">
-          <v-divider vertical class="ml-2 mr-2"></v-divider>
+        <v-toolbar-items class="hidden-sm-and-down">        
           <v-btn text color="secondary" class="" to="/caracteristiques"
             >Nos Caractéristiques</v-btn
           >
