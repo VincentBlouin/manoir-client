@@ -1,5 +1,5 @@
 <template>
-  <v-row align-content="center" align="center" class="h-center mt-8">
+  <v-row align-content="center" align="center" class="h-center mt-8 mb-8">
     <v-col cols="12" sm="9" md="7" lg="6" xl="5" v-if="article !== null">
       <h1 v-html="article.title.rendered" class="pt-6 text-left"></h1>
       <v-row class="subtitle-1 mb-6">
@@ -8,7 +8,7 @@
           <span v-if="article._embedded.author[0].name === 'montnoir'">
             Anonyme,
           </span>
-          <span v-else> {{ article._embedded.author[0].name }},</span>        
+          <span v-else> {{ article._embedded.author[0].name }},</span>
           <span class="ml-2">
             {{ article.dateFormatted }}
           </span>
@@ -24,6 +24,27 @@
         v-html="article.content.rendered"
         class="text-left body-1 post-content bigger-font mt-6"
       ></div>
+      <v-card color="transparent" flat class="mt-8" v-if="comments.length">
+        <v-card-title class="pb-0">
+          Commentaires        
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card
+          v-for="comment in comments"
+          :key="comment.id"
+          color="transparent"
+          flat
+        >
+          <v-card-title class="subtitle-1 text-left font-italic">
+            {{ comment.author_name }},
+            {{ comment.dateFormatted }}
+          </v-card-title>
+
+          <v-card-text v-html="comment.content.rendered" class="text-left body-1">
+          </v-card-text>
+          <v-divider></v-divider>
+        </v-card>
+      </v-card>
     </v-col>
   </v-row>
 </template>
@@ -37,15 +58,25 @@ export default {
   data: function () {
     return {
       article: null,
+      comments: [],
     };
   },
   mounted: async function () {
-    const response = await Service.api().get(
-      "posts?_embed&slug=" + this.$route.params.slug
+    let response = await Service.api().get(
+      "posts?_embed=1&slug=" + this.$route.params.slug
     );
     this.article = response.data[0];
-  
+
     this.article.dateFormatted = DateUtil.fromNow(new Date(this.article.date));
+    this.comments = this.article._embedded.replies
+      .flat()
+      .map((comment) => {
+        comment.dateFormatted = DateUtil.fromNow(new Date(comment.date));
+        return comment;
+      })
+      .sort((a, b) => {
+        return new Date(a.date) - new Date(b.date);
+      });
   },
 };
 </script>
