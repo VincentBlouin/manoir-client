@@ -26,7 +26,7 @@
           <v-img
             height="250"
             v-if="caracteristique._embedded"
-            :src="caracteristique._embedded['wp:featuredmedia']['0'].source_url"
+            :src="caracteristique.imageUrl"
           ></v-img>
 
           <v-card-title v-html="caracteristique.title.rendered"></v-card-title>
@@ -78,10 +78,8 @@
         >
           <v-img
             height="250"
-            v-if="nonCaracteristique._embedded"
-            :src="
-              nonCaracteristique._embedded['wp:featuredmedia']['0'].source_url
-            "
+            v-if="nonCaracteristique.imageUrl"
+            :src="nonCaracteristique.imageUrl"
           ></v-img>
 
           <v-card-title
@@ -119,7 +117,7 @@
 
 <script>
 import Service from "@/Service";
-
+import PostFormat from "@/PostFormat";
 export default {
   name: "Caractéristiques.vue",
   data: function () {
@@ -162,11 +160,8 @@ export default {
           "&offset=" +
           this[contentType + "Page"] * this.nbPerPage
       );
-      const entries = response.data.map((entry) => {
-        const url = new URL(entry.link);
-        entry.link = url.pathname;
-        return entry;
-      });
+      const entries = response.data.map(PostFormat.forThumb);
+
       if (entries.length) {
         this[contentType + "Page"] += 1;
         this[contentType + "s"].push(...entries);

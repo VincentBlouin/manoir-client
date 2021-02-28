@@ -28,8 +28,8 @@
         >
           <v-img
             height="250"
-            v-if="article._embedded['wp:featuredmedia']"
-            :src="article._embedded['wp:featuredmedia']['0'].source_url"
+            v-if="article.imageUrl"
+            :src="article.imageUrl"
           ></v-img>
 
           <v-card-title
@@ -62,7 +62,7 @@
 <script>
 import Service from "@/Service";
 import InfiniteLoading from "vue-infinite-loading";
-import DateUtil from "@/DateUtil";
+import PostFormat from "@/PostFormat";
 
 export default {
   name: "Articles.vue",
@@ -84,12 +84,7 @@ export default {
       const response = await Service.api().get(
         "posts?_embed&per_page=8&offset=" + this.articlesPage * 8
       );
-      const articles = response.data.map((article) => {
-        const url = new URL(article.link);
-        article.link = url.pathname;
-        article.dateFormatted = DateUtil.fromNow(new Date(article.date));
-        return article;
-      });
+      const articles = response.data.map(PostFormat.forThumb);
       if (articles.length) {
         this.articlesPage += 1;
         this.articles.push(...articles);
