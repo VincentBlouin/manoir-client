@@ -73,7 +73,7 @@
           <v-carousel-item
             v-for="(image, i) in images"
             :key="i"
-            :src="require('@/assets' + image.src)"
+            :src="image.src"
             reverse-transition="fade-transition"
             transition="fade-transition"
           >
@@ -107,26 +107,24 @@
 </template>
 
 <script>
+import Service from "@/Service";
 export default {
   name: "Home",
-  components: {  
+  components: {
     Caracteristiques: () => import("@/views/Caractéristiques"),
     Articles: () => import("@/views/Articles"),
   },
   data: function () {
-    return {      
-      images: [
-        {
-          src: "/maison-devant.jpg",
-          // legend:"Vue de devant"
-        },
-        {
-          src: "/maison-derrière.jpg",
-          // legend:"Vue de derrière"
-        },
-      ],
+    return {
+      images: [],
     };
   },
-  mounted: async function () {},
+  mounted: async function () {
+    let response = await Service.api().get("image-avant");
+    this.images = response.data.map((image) => {
+      image.src = image.acf.image_avant.sizes.large;
+      return image;
+    });
+  },
 };
 </script>

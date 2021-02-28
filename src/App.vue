@@ -15,7 +15,14 @@
         }"
       >
         <v-toolbar-title class="text-h4">
-          <router-link to="/" class="manoir-font" style="text-decoration: none">
+          <router-link
+            to="/"
+            class="manoir-font"
+            style="text-decoration: none"
+            :class="{
+              'text-h6': $vuetify.breakpoint.smAndDown,
+            }"
+          >
             Le Manoir
             <span
               class="manoir-font"
@@ -28,7 +35,6 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn text color="secondary" class=""> En Images </v-btn>
           <v-divider vertical class="ml-2 mr-2"></v-divider>
           <v-btn text color="secondary" class="" to="/caracteristiques"
             >Nos Caractéristiques</v-btn
@@ -37,10 +43,58 @@
           <v-btn text color="secondary" class="" to="/articles">
             Articles des membres
           </v-btn>
-          <v-btn dark color="secondary" class=""> Prêt Solidaire </v-btn>
-          <v-btn text color="secondary" class=""> Nous recrutons </v-btn>
+          <v-btn dark color="secondary" class="" to="/prêt-solidaire">
+            Prêt Solidaire
+          </v-btn>
+          <v-btn text color="secondary" class="" to="/nous-recrutons">
+            Nous recrutons
+          </v-btn>
         </v-toolbar-items>
+        <v-app-bar-nav-icon
+          color="secondary"
+          v-if="$vuetify.breakpoint.smAndDown"
+          class="mr-1"
+          @click.stop="sideMenu = !sideMenu"
+        ></v-app-bar-nav-icon>
       </v-app-bar>
+      <v-navigation-drawer
+        v-model="sideMenu"
+        fixed
+        temporary      
+        :style="{
+          background: 'url(' + require('@/assets/noise3.jpg') + ')',
+          'background-repeat': 'repeat',
+        }"
+      >
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/caracteristiques">
+              Nos Caractéristiques
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/articles">
+              Articles des membres
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/prêt-solidaire">
+              Prêt Solidaire
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/nous-recrutons">
+              Nous recrutons
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+      </v-navigation-drawer>
       <router-view class="pt-12" />
     </v-app>
   </div>
@@ -48,6 +102,11 @@
 
 <script>
 export default {
+  data: function () {
+    return {
+      sideMenu: false,
+    };
+  },
   computed: {
     background: function () {
       return "";
