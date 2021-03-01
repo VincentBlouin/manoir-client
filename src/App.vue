@@ -42,7 +42,7 @@
           <v-btn text color="secondary" class="" to="/articles">
             Articles des membres
           </v-btn>
-          <v-btn dark color="secondary" class="" to="/prêt-solidaire">
+          <v-btn dark color="secondary" class="" to="/pret-solidaire">
             Prêt Solidaire
           </v-btn>
           <v-btn text color="secondary" class="" to="/nous-recrutons">
