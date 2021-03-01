@@ -82,7 +82,7 @@
         </v-list-item>
         <v-list-item>
           <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/prêt-solidaire">
+            <v-btn text color="secondary" class="" to="/pret-solidaire">
               Prêt Solidaire
             </v-btn>
           </v-list-item-title>
