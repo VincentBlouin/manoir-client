@@ -1,42 +1,43 @@
 <template>
   <div id="app">
     <v-app
-      :style="{
+        :style="{
         background: 'url(' + require('@/assets/noise3.jpg') + ')',
         'background-repeat': 'repeat',
       }"
     >
       <v-app-bar
-        app
-        flat
-        :style="{
+          app
+          flat
+          :style="{
           background: 'url(' + require('@/assets/noise3.jpg') + ')',
           'background-repeat': 'repeat',
         }"
       >
         <v-toolbar-title class="text-h4">
           <router-link
-            to="/"
-            class="manoir-font"
-            style="text-decoration: none"
-            :class="{
-              'text-h6': $vuetify.breakpoint.smAndDown,
+              to="/"
+              class="manoir-font"
+              style="text-decoration: none"
+              :class="{
+              'manoir-font-smaller': $vuetify.breakpoint.smAndDown,
             }"
           >
             Le Manoir
             <span
-              class="manoir-font"
-              :style="{
+                class="manoir-font manoir-font-smaller"
+                :style="{
                 'font-size': communauteFontSize,
               }"
-              >communauté intentionnelle</span
+            >communauté intentionnelle</span
             >
           </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">        
+        <v-toolbar-items class="hidden-sm-and-down">
           <v-btn text color="secondary" class="" to="/caracteristiques"
-            >Nos Caractéristiques</v-btn
+          >Nos Caractéristiques
+          </v-btn
           >
           <v-divider vertical class="ml-2 mr-2"></v-divider>
           <v-btn text color="secondary" class="" to="/articles">
@@ -50,17 +51,17 @@
           </v-btn>
         </v-toolbar-items>
         <v-app-bar-nav-icon
-          color="secondary"
-          v-if="$vuetify.breakpoint.smAndDown"
-          class="mr-1"
-          @click.stop="sideMenu = !sideMenu"
+            color="secondary"
+            v-if="$vuetify.breakpoint.smAndDown"
+            class="mr-1"
+            @click.stop="sideMenu = !sideMenu"
         ></v-app-bar-nav-icon>
       </v-app-bar>
       <v-navigation-drawer
-        v-model="sideMenu"
-        fixed
-        temporary      
-        :style="{
+          v-model="sideMenu"
+          fixed
+          temporary
+          :style="{
           background: 'url(' + require('@/assets/noise3.jpg') + ')',
           'background-repeat': 'repeat',
         }"
@@ -94,7 +95,7 @@
           </v-list-item-title>
         </v-list-item>
       </v-navigation-drawer>
-      <router-view class="pt-12" />
+      <router-view class="pt-12"/>
     </v-app>
   </div>
 </template>
@@ -146,6 +147,10 @@ body {
   letter-spacing: 2px;
 }
 
+.manoir-font-smaller {
+  font-size:0.7em;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -182,6 +187,7 @@ body {
   img {
     max-width: 100%;
   }
+
   * {
     line-height: 2;
   }
@@ -194,10 +200,12 @@ body {
       font-size: 1.25em;
     }
   }
+
   &.v-card__text p {
     font-size: 1.1em;
   }
 }
+
 .v-card__title {
   word-break: inherit !important;
 }

@@ -1,6 +1,6 @@
 <template>
   <v-row align-content="center" align="center" class="h-center mt-8">
-    <v-col cols="5" v-if="caracteristique !== null">
+    <v-col cols="12" sm="9" md="7" lg="6" xl="5" v-if="caracteristique !== null">
       <v-img
         contain
         max-height="600"
