@@ -37,7 +37,7 @@ const routes = [
     },
     {
         path: '/:slug/',
-        name: 'Articles',
+        name: 'Article',
         component: () => import('../views/Article')
     },
 ]
