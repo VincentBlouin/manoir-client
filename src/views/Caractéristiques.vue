@@ -51,6 +51,7 @@
           text
           :disabled="!caracteristiqueHasMore"
           class="font-weight-bold"
+          v-if="!isOnPageFlow"
         >
           caractéristiques suivantes
           <v-icon right>navigate_next</v-icon>
@@ -106,6 +107,7 @@
           text
           :disabled="!nonCaracteristiqueHasMore"
           class="font-weight-bold"
+          v-if="!isOnPageFlow"
         >
           non caractéristiques suivantes
           <v-icon right>navigate_next</v-icon>
@@ -137,6 +139,9 @@ export default {
   },
   mounted: async function () {
     this.isOnPageFlow = this.$route.name === "Caracteristiques";
+    if(this.isOnPageFlow){
+      this.nbPerPage = 99;
+    }
     this.caracteristiquesLoadMore();
     this.nonCaracteristiquesLoadMore();
   },
