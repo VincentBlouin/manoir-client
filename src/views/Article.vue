@@ -24,7 +24,7 @@
           :src="article._embedded['wp:featuredmedia']['0'].source_url"
       ></v-img>
       <div
-          v-html="article.content.rendered"
+          v-html="article.formattedContent"
           class="text-left body-1 post-content bigger-font mt-6"
       ></div>
       <v-card color="transparent" flat class="mt-8" v-if="comments.length">
@@ -55,6 +55,7 @@
 <script>
 import Service from "@/Service";
 import DateUtil from "@/DateUtil";
+import PostFormat from "@/PostFormat";
 
 export default {
   name: "Article",
@@ -94,7 +95,8 @@ export default {
             return new Date(a.date) - new Date(b.date);
           });
     }
-  },
+    this.article.formattedContent = PostFormat.formatHtml(this.article.content.rendered);
+  }
 }
 ;
 </script>

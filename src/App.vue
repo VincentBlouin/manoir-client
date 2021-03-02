@@ -209,4 +209,6 @@ body {
 .v-card__title {
   word-break: inherit !important;
 }
+
+
 </style>

@@ -1,4 +1,5 @@
 import DateUtil from "@/DateUtil";
+
 const PostFormat = {};
 PostFormat.forThumb = function (post) {
     const url = new URL(post.link);
@@ -15,5 +16,8 @@ PostFormat.forThumb = function (post) {
         }
     }
     return post;
+};
+PostFormat.formatHtml = function (html) {
+    return html.replaceAll("<ul", "<ul class='body-1'");
 };
 export default PostFormat;
