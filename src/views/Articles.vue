@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{
+      :class="{
       'pt-16': isOnPageFlow,
       'pb-16': isOnPageFlow,
     }"
@@ -12,29 +12,41 @@
       Passés et présents
     </v-subheader>
 
+    <v-row class="vh-center">
+      <v-col cols="12" md="6" lg="4">
+        <v-text-field placeholder="Chercher parmis les articles" v-model="searchText" @keyup="search">
+          <v-icon
+              slot="prepend"
+          >
+            search
+          </v-icon>
+        </v-text-field>
+      </v-col>
+    </v-row>
+
     <v-row>
       <v-col
-        cols="12"
-        md="4"
-        lg="3"
-        v-for="article in articles"
-        :key="article.id"
+          cols="12"
+          md="4"
+          lg="3"
+          v-for="article in articles"
+          :key="article.id"
       >
         <v-card
-          class="mx-auto my-12"
-          max-width="374"
-          :to="article.link"
-          style="background: rgb(255 255 255 / 15%)"
+            class="mx-auto my-12"
+            max-width="374"
+            :to="article.link"
+            style="background: rgb(255 255 255 / 15%)"
         >
           <v-img
-            height="250"
-            v-if="article.imageUrl"
-            :src="article.imageUrl"
+              height="250"
+              v-if="article.imageUrl"
+              :src="article.imageUrl"
           ></v-img>
 
           <v-card-title
-            v-html="article.title.rendered"
-            class="text-left secondary-color"
+              v-html="article.title.rendered"
+              class="text-left secondary-color"
           ></v-card-title>
           <v-card-subtitle class="text-left" v-if="article._embedded.author">
             <span v-if="article._embedded.author[0].name === 'montnoir'">
@@ -46,13 +58,13 @@
             </span>
           </v-card-subtitle>
           <v-card-text
-            v-html="article.excerpt.rendered"
-            class="body-1 text-left bigger-font"
+              v-html="article.excerpt.rendered"
+              class="body-1 text-left bigger-font"
           ></v-card-text>
         </v-card>
       </v-col>
     </v-row>
-    <infinite-loading @infinite="infiniteHandler">
+    <infinite-loading @infinite="infiniteHandler" :key="searchKey">
       <div slot="no-more">Fin des articles</div>
       <div slot="no-results">Fin des articles</div>
     </infinite-loading>
@@ -64,6 +76,7 @@ import Service from "@/Service";
 import InfiniteLoading from "vue-infinite-loading";
 import PostFormat from "@/PostFormat";
 
+let searchTimeout = null;
 export default {
   name: "Articles.vue",
   components: {
@@ -74,6 +87,8 @@ export default {
       articles: [],
       articlesPage: 0,
       isOnPageFlow: false,
+      searchText: null,
+      searchKey: Math.random()
     };
   },
   mounted: function () {
@@ -81,8 +96,12 @@ export default {
   },
   methods: {
     infiniteHandler: async function ($state) {
+      let searchQueryPart = "";
+      if (this.searchText !== null && this.searchText.trim() !== "") {
+        searchQueryPart = '&search=' + this.searchText;
+      }
       const response = await Service.api().get(
-        "posts?_embed&per_page=8&offset=" + this.articlesPage * 8
+          "posts?_embed&per_page=8&offset=" + this.articlesPage * 8 + searchQueryPart
       );
       const articles = response.data.map(PostFormat.forThumb);
       if (articles.length) {
@@ -93,6 +112,17 @@ export default {
         $state.complete();
       }
     },
+    search: function () {
+      if (searchTimeout) {
+        clearTimeout(searchTimeout);
+      }
+      searchTimeout = setTimeout(() => {
+        this.articles = [];
+        this.articlesPage = 0;
+        this.searchKey = Math.random();
+        searchTimeout = null;
+      }, 1000);
+    }
   },
 };
 </script>
