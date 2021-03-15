@@ -34,29 +34,57 @@
           </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">
+        <v-toolbar-items class="hidden-md-and-down">
+          <!--          <v-btn text color="secondary" class="" to="/projet"-->
+          <!--                 Le Projet-->
+          <!--          </v-btn>-->
           <v-btn text color="secondary" class="" to="/caracteristiques"
+                 :small="$vuetify.breakpoint.lgOnly"
           >Nos Caractéristiques
           </v-btn
           >
           <v-divider vertical class="ml-2 mr-2"></v-divider>
-          <v-btn text color="secondary" class="" to="/articles">
+          <v-btn text color="secondary" class="" to="/articles" :small="$vuetify.breakpoint.lgOnly">
             Articles des membres
           </v-btn>
-          <v-btn dark color="secondary" class="" to="/pret-solidaire">
+          <v-btn dark color="secondary" class="" to="/pret-solidaire" :small="$vuetify.breakpoint.lgOnly">
             Prêt Solidaire
           </v-btn>
-          <v-btn text color="secondary" class="" to="/nous-recrutons">
+          <v-btn text color="secondary" class="" to="/nous-recrutons" :small="$vuetify.breakpoint.lgOnly">
             Nous recrutons
           </v-btn>
         </v-toolbar-items>
         <v-app-bar-nav-icon
             color="secondary"
-            v-if="$vuetify.breakpoint.smAndDown"
+            v-if="$vuetify.breakpoint.mdAndDown"
             class="mr-1"
             @click.stop="sideMenu = !sideMenu"
         ></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon
+            color="secondary"
+            v-if="$vuetify.breakpoint.lgAndUp"
+            class="mr-1"
+            @click.stop="desktopSideMenu = !desktopSideMenu"
+        ></v-app-bar-nav-icon>
       </v-app-bar>
+      <v-navigation-drawer
+          v-model="desktopSideMenu"
+          app
+          right
+          :style="{
+          background: 'url(' + require('@/assets/noise3.jpg') + ')',
+          'background-repeat': 'repeat',
+        }"
+      >
+
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/articles" :small="$vuetify.breakpoint.lgOnly">
+              Initiatives et outils
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+      </v-navigation-drawer>
       <v-navigation-drawer
           v-model="sideMenu"
           fixed
@@ -67,6 +95,11 @@
         }"
       >
         <v-list-item>
+          <!--          <v-list-item-title>-->
+          <!--            <v-btn text color="secondary" class="" to="/projet">-->
+          <!--              Le Projet-->
+          <!--            </v-btn>-->
+          <!--          </v-list-item-title>-->
           <v-list-item-title>
             <v-btn text color="secondary" class="" to="/caracteristiques">
               Nos Caractéristiques
@@ -105,6 +138,7 @@ export default {
   data: function () {
     return {
       sideMenu: false,
+      desktopSideMenu: false
     };
   },
   computed: {
@@ -148,7 +182,7 @@ body {
 }
 
 .manoir-font-smaller {
-  font-size:0.7em;
+  font-size: 0.7em;
 }
 
 #app {

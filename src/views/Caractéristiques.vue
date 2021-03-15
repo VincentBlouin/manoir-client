@@ -13,7 +13,7 @@
       <v-col
         cols="12"
         md="4"
-        lg="3"
+        xl="3"
         v-for="caracteristique in caracteristiques"
         :key="caracteristique.id"
       >
@@ -67,7 +67,7 @@
       <v-col
         cols="12"
         md="4"
-        lg="3"
+        xl="3"
         v-for="nonCaracteristique in nonCaracteristiques"
         :key="nonCaracteristique.id"
       >

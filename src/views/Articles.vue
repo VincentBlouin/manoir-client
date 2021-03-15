@@ -28,7 +28,7 @@
       <v-col
           cols="12"
           md="4"
-          lg="3"
+          xl="3"
           v-for="article in articles"
           :key="article.id"
       >
@@ -91,7 +91,7 @@ export default {
       searchKey: Math.random()
     };
   },
-  mounted: function () {
+  mounted: async function () {
     this.isOnPageFlow = this.$route.name === "Articles";
   },
   methods: {

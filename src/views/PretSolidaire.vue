@@ -1,6 +1,6 @@
 <template>
-  <div class="mb-16">
-    <v-row class="mt-8 mb-8">
+  <Page>
+    <v-row>
       <v-col cols="12" class="h-center">
         <v-card flat color="transparent" max-width="600">
           <v-card-title class="h-center mb-4">
@@ -14,13 +14,13 @@
       </v-col>
     </v-row>
     <v-row class="h-center">
-      <v-col cols="12" md="6" lg="4">
+      <v-col cols="12" xl="6">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/cICr-qMmp7Q" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
       </v-col>
-      <v-col cols="12" md="6" lg="4">
-        <v-card flat color="transparent">
+      <v-col cols="12" md="7" xl="6" align-self="center">
+        <v-card flat color="transparent" class="pl-10">
           <v-card-title class="text-left mb-4 body-1 pl-0">
             <strong class="text-h5 mr-2">{{ formatPrice(moneyReceived) }}$</strong>
             récoltés sur un objectif de {{ formatPrice(objective) }}$
@@ -47,15 +47,17 @@
             </div>
           </v-card-text>
           <v-card-actions class="pl-0 mt-10">
+            <v-spacer v-if="$vuetify.breakpoint.lgAndDown"></v-spacer>
             <v-btn color="secondary" x-large @click="action=true">
               Je soutiens ce projet
             </v-btn>
+            <v-spacer v-if="$vuetify.breakpoint.lgAndDown"></v-spacer>
           </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
     <v-row class="h-center">
-      <v-col cols="12" lg="8">
+      <v-col cols="12">
         <v-tabs background-color="transparent" v-model="tabs" grow>
           <v-tab>
             Campagne
@@ -107,7 +109,7 @@
       </v-col>
     </v-row>
     <v-dialog v-model="action" fullscreen>
-      <v-card             :style="{
+      <v-card :style="{
         background: 'url(' + require('@/assets/noise3.jpg') + ')',
         'background-repeat': 'repeat',
       }">
@@ -128,12 +130,15 @@
         </v-card-text>
       </v-card>
     </v-dialog>
-  </div>
+  </Page>
 </template>
 
 <script>
 export default {
   name: "PretSolidaire",
+  components: {
+    Page: () => import('@/components/Page')
+  },
   data: function () {
     return {
       moneyReceived: 4000,
@@ -141,7 +146,7 @@ export default {
       percentageReceived: null,
       nbLender: 2,
       daysLeft: 300,
-      tabs:null,
+      tabs: null,
       action: false
     }
   },

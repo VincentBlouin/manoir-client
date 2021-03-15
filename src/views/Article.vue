@@ -3,7 +3,7 @@
     <v-col cols="12" v-if="noContentError">
       <h3 class="primary-color">Pas de contenu, erreur 404</h3>
     </v-col>
-    <v-col cols="12" sm="9" md="7" lg="6" xl="5" v-if="article !== null && !noContentError">
+    <v-col cols="12" sm="9" md="8" xl="5" v-if="article !== null && !noContentError">
       <h1 v-html="article.title.rendered" class="pt-6 text-left"></h1>
       <v-row class="subtitle-1 mb-6" v-if="isArticle">
         <v-col cols="12" class="text-left font-italic">
