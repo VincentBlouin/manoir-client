@@ -15,7 +15,7 @@
     "vue": "^2.6.12",
     "vue-infinite-loading": "^2.4.5",
     "vue-router": "3.5.1",
-    "vuetify": "^2.4.6"
+    "vuetify": "^2.4.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.0",
