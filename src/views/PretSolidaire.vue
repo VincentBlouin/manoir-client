@@ -58,7 +58,7 @@
     </v-row>
     <v-row class="h-center">
       <v-col cols="12" class="text-left body-1">
-        <v-card color="transparent" class="mb-6">
+        <v-card color="transparent" class="mb-6" flat>
           <v-card-title>
             Le projet
           </v-card-title>
@@ -75,7 +75,7 @@
             </p>
           </v-card-text>
         </v-card>
-        <v-card color="transparent" class="mb-6">
+        <v-card color="transparent" class="mb-6" flat>
           <v-card-title>
             Pourquoi?
           </v-card-title>
@@ -115,7 +115,7 @@
             </ul>
           </v-card-text>
         </v-card>
-        <v-card color="transparent" class="mb-6">
+        <v-card color="transparent" class="mb-6" flat>
           <v-card-title>
             Qui nous sommes?
           </v-card-title>
@@ -146,7 +146,7 @@
             </ul>
           </v-card-text>
         </v-card>
-        <v-card color="transparent" class="mb-6">
+        <v-card color="transparent" class="mb-6" flat>
           <v-card-title>
             À quoi servira le prêt?
           </v-card-title>
@@ -179,7 +179,7 @@
             </ul>
           </v-card-text>
         </v-card>
-        <v-card color="transparent" class="mb-6">
+        <v-card color="transparent" class="mb-6" flat>
           <v-card-title>
             Comment ça marche?
           </v-card-title>
@@ -210,7 +210,7 @@
             </ul>
           </v-card-text>
         </v-card>
-        <v-card color="transparent">
+        <v-card color="transparent" flat>
           <v-card-title class="text-h6">
             Quels sont les risques?
           </v-card-title>
