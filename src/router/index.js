@@ -39,7 +39,7 @@ const routes = [
         path: '/:slug/',
         name: 'Article',
         component: () => import('../views/Article')
-    },
+    }
 ]
 
 const router = new VueRouter({
@@ -56,7 +56,7 @@ const router = new VueRouter({
                 }, 1000);
             });
         } else {
-            return { x: 0, y: 0 }
+            return {x: 0, y: 0}
         }
     }
 })

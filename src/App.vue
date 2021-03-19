@@ -69,8 +69,10 @@
       </v-app-bar>
       <v-navigation-drawer
           v-model="desktopSideMenu"
-          app
+          fixed
           right
+          app
+          temporary
           :style="{
           background: 'url(' + require('@/assets/noise3.jpg') + ')',
           'background-repeat': 'repeat',
@@ -79,7 +81,7 @@
 
         <v-list-item>
           <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/articles" :small="$vuetify.breakpoint.lgOnly">
+            <v-btn text color="secondary" class="" to="/liens" :small="$vuetify.breakpoint.lgOnly">
               Initiatives et outils
             </v-btn>
           </v-list-item-title>
