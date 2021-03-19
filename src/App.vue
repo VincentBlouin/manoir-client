@@ -172,7 +172,7 @@
           </v-list-item-action>
         </v-list-item>
         <v-list-item href="https://www.facebook.com/lemanoir.community" class="body-1">
-          <v-list-item-title class="text-left">
+          <v-list-item-title class="text-left secondary-color">
             /lemanoir.community
           </v-list-item-title>
           <v-list-item-action>
