@@ -86,6 +86,38 @@
             </v-btn>
           </v-list-item-title>
         </v-list-item>
+        <v-list-item href="mailto:manoir.intentionnel@gmail.com" class="body-1">
+          <v-list-item-title class="text-left secondary-color">
+            manoir.intentionnel@gmail.com
+          </v-list-item-title>
+          <v-list-item-action>
+            <v-icon color="secondary">
+              mail
+            </v-icon>
+          </v-list-item-action>
+        </v-list-item>
+        <v-list-item href="https://www.facebook.com/lemanoir.community" class="body-1">
+          <v-list-item-title class="text-left secondary-color">
+            /lemanoir.community
+          </v-list-item-title>
+          <v-list-item-action>
+            <img
+                src="https://facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png?w=30&h=30"
+            />
+          </v-list-item-action>
+        </v-list-item>
+        <v-list-item href="https://www.instagram.com/lemanoir.community" class="body-1">
+          <v-list-item-title class="text-left secondary-color">
+            /lemanoir.community
+          </v-list-item-title>
+          <v-list-item-action>
+            <v-img
+                   width="32"
+                   :src="require('@/assets/instagram.svg')"
+            >
+            </v-img>
+          </v-list-item-action>
+        </v-list-item>
       </v-navigation-drawer>
       <v-navigation-drawer
           v-model="sideMenu"
@@ -128,6 +160,38 @@
               Nous recrutons
             </v-btn>
           </v-list-item-title>
+        </v-list-item>
+        <v-list-item href="mailto:manoir.intentionnel@gmail.com" class="body-1">
+          <v-list-item-title class="text-left secondary-color">
+            manoir.intentionnel@gmail.com
+          </v-list-item-title>
+          <v-list-item-action>
+            <v-icon color="secondary">
+              mail
+            </v-icon>
+          </v-list-item-action>
+        </v-list-item>
+        <v-list-item href="https://www.facebook.com/lemanoir.community" class="body-1">
+          <v-list-item-title class="text-left">
+            /lemanoir.community
+          </v-list-item-title>
+          <v-list-item-action>
+            <img
+                src="https://facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png?w=30&h=30"
+            />
+          </v-list-item-action>
+        </v-list-item>
+        <v-list-item href="https://www.instagram.com/lemanoir.community" class="body-1">
+          <v-list-item-title class="text-left secondary-color">
+            /lemanoir.community
+          </v-list-item-title>
+          <v-list-item-action>
+            <v-img
+                width="32"
+                :src="require('@/assets/instagram.svg')"
+            >
+            </v-img>
+          </v-list-item-action>
         </v-list-item>
       </v-navigation-drawer>
       <router-view class="pt-12"/>
