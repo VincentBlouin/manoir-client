@@ -86,6 +86,8 @@
             </v-btn>
           </v-list-item-title>
         </v-list-item>
+        <v-subheader color="secondary" class="">Contact</v-subheader>
+        <v-divider></v-divider>
         <v-list-item href="mailto:manoir.intentionnel@gmail.com" class="body-1">
           <v-list-item-title class="text-left secondary-color">
             manoir.intentionnel@gmail.com
@@ -112,8 +114,8 @@
           </v-list-item-title>
           <v-list-item-action>
             <v-img
-                   width="32"
-                   :src="require('@/assets/instagram.svg')"
+                width="32"
+                :src="require('@/assets/instagram.svg')"
             >
             </v-img>
           </v-list-item-action>
@@ -161,6 +163,8 @@
             </v-btn>
           </v-list-item-title>
         </v-list-item>
+        <v-subheader color="secondary" class="">Contact</v-subheader>
+        <v-divider></v-divider>
         <v-list-item href="mailto:manoir.intentionnel@gmail.com" class="body-1">
           <v-list-item-title class="text-left secondary-color">
             manoir.intentionnel@gmail.com
@@ -286,6 +290,7 @@ body {
 .post-content {
   img {
     max-width: 100%;
+    height: auto;
   }
 
   * {
