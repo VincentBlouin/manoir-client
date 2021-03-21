@@ -13,6 +13,12 @@
     <!--    nature, tout en permettant à ses membres de s'épanouir et de développer leurs pleines potentialités.-->
 
     <p class="body-1 text-left">
+      Nous sommes une communauté intentionnelle à partage de revenu, dans la Baie des Chaleurs.
+    </p>
+    <p class="body-1 text-left">
+      Nous visons à créer et maintenir un environnement humain sain et sécuritaire qui permet et favorise l’égalité de pouvoir et le partage et la mise en commun des ressources de manière durable.
+    </p>
+    <p class="body-1 text-left">
       La vision que nous avons pour la communauté du Manoir est un équilibre entre ces 5 principes.
     </p>
     <v-expansion-panels color="transparent" class="body-1 about-expansion-panel">
