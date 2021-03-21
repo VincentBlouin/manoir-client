@@ -1,5 +1,5 @@
 <template>
-  <Page>
+  <Page class="about">
     <h2 class="text-left mb-4">À propos</h2>
     <!--    <p>-->
     <!--      Le Manoir est une communauté intentionnelle québécoise à revenu partagé. Elle fournit le logement à ses membres-->
@@ -43,7 +43,8 @@
             </li>
             <li>
               On a envie de <strong>co-créer</strong>, de chercher ensemble. D'une part, chacun
-              <strong>s'engage</strong>envers l'autre, la communauté se
+              <strong>s'engage</strong>
+              envers l'autre, la communauté se
               soutient, on embrasse les conflits et on se donne l'espace pour les régler. On place au centre de toute
               résolution de conflit le respect de chacun, la reconnaissance, la confiance que chaque personne fait de
               son
@@ -301,5 +302,9 @@ export default {
   &.v-expansion-panels, .v-expansion-panel {
     background-color: transparent !important;
   }
+}
+.about li{
+  margin-top:5px;
+  margin-bottom:5px;
 }
 </style>
