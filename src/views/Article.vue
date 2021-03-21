@@ -68,37 +68,46 @@ export default {
     };
   },
   mounted: async function () {
-    let response = await Service.api().get(
-        "posts?_embed=1&slug=" + this.$route.params.slug
-    );
-    if (response.data.length === 0) {
-      response = await Service.api().get(
-          "pages?_embed&slug=" + this.$route.params.slug
+    this.rebuild();
+  },
+  watch: {
+    '$route.params.slug': function () {
+      this.rebuild();
+    }
+  },
+  methods: {
+    rebuild: async function () {
+      let response = await Service.api().get(
+          "posts?_embed=1&slug=" + this.$route.params.slug
       );
       if (response.data.length === 0) {
-        this.noContentError = true;
-        return;
+        response = await Service.api().get(
+            "pages?_embed&slug=" + this.$route.params.slug
+        );
+        if (response.data.length === 0) {
+          this.noContentError = true;
+          return;
+        }
+        this.isArticle = false;
       }
-      this.isArticle = false;
-    }
-    this.article = response.data[0];
+      this.article = response.data[0];
 
-    this.article.dateFormatted = DateUtil.fromNow(new Date(this.article.date));
-    if (this.article._embedded.replies) {
-      this.comments = this.article._embedded.replies
-          .flat()
-          .map((comment) => {
-            comment.dateFormatted = DateUtil.fromNow(new Date(comment.date));
-            return comment;
-          })
-          .sort((a, b) => {
-            return new Date(a.date) - new Date(b.date);
-          });
+      this.article.dateFormatted = DateUtil.fromNow(new Date(this.article.date));
+      if (this.article._embedded.replies) {
+        this.comments = this.article._embedded.replies
+            .flat()
+            .map((comment) => {
+              comment.dateFormatted = DateUtil.fromNow(new Date(comment.date));
+              return comment;
+            })
+            .sort((a, b) => {
+              return new Date(a.date) - new Date(b.date);
+            });
+      }
+      this.article.formattedContent = PostFormat.formatHtml(this.article.content.rendered);
     }
-    this.article.formattedContent = PostFormat.formatHtml(this.article.content.rendered);
   }
-}
-;
+};
 </script>
 
 <style scoped>

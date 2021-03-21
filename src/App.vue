@@ -324,7 +324,6 @@ body {
 figcaption{
   text-align:center;
   margin-bottom:30px;
-  font-style: italic;
 }
 
 
