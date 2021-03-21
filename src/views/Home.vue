@@ -37,7 +37,7 @@
           </v-card-title>
           <v-card-actions class="pt-8">
             <v-spacer></v-spacer>
-            <v-btn color="secondary" text x-large> Nous recrutons </v-btn>
+            <v-btn color="secondary" text x-large to="/nous-recrutons"> Nous recrutons </v-btn>
             <v-divider
               vertical
               class="mr-8 ml-8"
@@ -48,6 +48,7 @@
               text
               x-large
               v-if="$vuetify.breakpoint.mdAndUp"
+              to="/pret-solidaire"
             >
               Prêt solidaire
             </v-btn>

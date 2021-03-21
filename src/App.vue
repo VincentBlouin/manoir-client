@@ -35,12 +35,9 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-md-and-down">
-          <!--          <v-btn text color="secondary" class="" to="/projet"-->
-          <!--                 Le Projet-->
-          <!--          </v-btn>-->
-          <v-btn text color="secondary" class="" to="/caracteristiques"
-                 :small="$vuetify.breakpoint.lgOnly"
-          >Nos Caractéristiques
+          <v-btn text color="secondary" class="" to="/le-projet"
+                 :small="$vuetify.breakpoint.lgOnly">
+            À propos
           </v-btn>
           <v-divider vertical class="ml-2 mr-2"></v-divider>
           <v-btn text color="secondary" class="" to="/articles" :small="$vuetify.breakpoint.lgOnly">
@@ -79,7 +76,13 @@
           'background-repeat': 'repeat',
         }"
       >
-
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/caracteristiques" :small="$vuetify.breakpoint.lgOnly">
+              Nos Caractéristiques
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
         <v-list-item>
           <v-list-item-title>
             <v-btn text color="secondary" class="" to="/liens" :small="$vuetify.breakpoint.lgOnly">
@@ -132,11 +135,13 @@
         }"
       >
         <v-list-item>
-          <!--          <v-list-item-title>-->
-          <!--            <v-btn text color="secondary" class="" to="/projet">-->
-          <!--              Le Projet-->
-          <!--            </v-btn>-->
-          <!--          </v-list-item-title>-->
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/le-projet">
+              À propos
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
           <v-list-item-title>
             <v-btn text color="secondary" class="" to="/caracteristiques">
               Nos Caractéristiques
