@@ -68,7 +68,7 @@
     <!--    <v-parallax :src="require('@/assets/maison-devant.jpg')" height="1000"></v-parallax>-->
 
     <v-row class="vh-center">
-      <v-col cols="12" lg="7">
+      <v-col cols="12" lg="9" xl="7">
         <v-carousel height="700">
           <v-carousel-item
             v-for="(image, i) in images"

@@ -116,18 +116,19 @@
     </v-row>
     <v-snackbar
         v-model="longTextNotAvailableSnackbar"
-        timeout="6000"
-        light
+        timeout="8000"
     >
-      Pas encore de long texte.
+      <span class="body-1">
+        Pas encore de long texte pour cette caractéristique.
+      </span>
       <template v-slot:action="{ attrs }">
         <v-btn
-            color="secondary"
-            text
+            dark
+            icon
             v-bind="attrs"
             @click="longTextNotAvailableSnackbar = false"
         >
-          Fermer
+          <v-icon>close</v-icon>
         </v-btn>
       </template>
     </v-snackbar>
