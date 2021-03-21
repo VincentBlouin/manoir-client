@@ -214,7 +214,7 @@
           <v-card-title class="text-h6">
             Quels sont les risques?
           </v-card-title>
-          <v-card-subtitle class="subtitle-1">(et les stratégies auxquelles nous avons pensé)</v-card-subtitle>
+          <v-card-subtitle class="subtitle-1">et les stratégies auxquelles nous avons pensé</v-card-subtitle>
           <v-card-text class="body-1 black--text">
             <h4 class="mb-3">
               Pas de capacité de payer

@@ -41,15 +41,16 @@
           <v-btn text color="secondary" class="" to="/caracteristiques"
                  :small="$vuetify.breakpoint.lgOnly"
           >Nos Caractéristiques
-          </v-btn
-          >
+          </v-btn>
           <v-divider vertical class="ml-2 mr-2"></v-divider>
           <v-btn text color="secondary" class="" to="/articles" :small="$vuetify.breakpoint.lgOnly">
             Articles des membres
           </v-btn>
-          <v-btn dark color="secondary" class="" to="/pret-solidaire" :small="$vuetify.breakpoint.lgOnly">
+          <v-divider vertical class="ml-2 mr-2"></v-divider>
+          <v-btn text color="secondary" class="" to="/pret-solidaire" :small="$vuetify.breakpoint.lgOnly">
             Prêt Solidaire
           </v-btn>
+          <v-divider vertical class="ml-2 mr-2"></v-divider>
           <v-btn text color="secondary" class="" to="/nous-recrutons" :small="$vuetify.breakpoint.lgOnly">
             Nous recrutons
           </v-btn>

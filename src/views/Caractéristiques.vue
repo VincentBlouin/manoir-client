@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{
+      :class="{
       'pt-16': isOnPageFlow,
       'pb-16': isOnPageFlow,
     }"
@@ -11,29 +11,29 @@
 
     <v-row>
       <v-col
-        cols="12"
-        md="4"
-        xl="3"
-        v-for="caracteristique in caracteristiques"
-        :key="caracteristique.id"
+          cols="12"
+          md="4"
+          xl="3"
+          v-for="caracteristique in caracteristiques"
+          :key="caracteristique.id"
       >
         <v-card
-          class="mx-auto my-12"
-          max-width="374"
-          :to="caracteristique.link"
-          style="background: rgb(255 255 255 / 15%)"
+            class="mx-auto my-12"
+            max-width="374"
+            @click="caracteristiqueClick(caracteristique)"
+            style="background: rgb(255 255 255 / 15%)"
         >
           <v-img
-            height="250"
-            v-if="caracteristique._embedded"
-            :src="caracteristique.imageUrl"
+              height="250"
+              v-if="caracteristique._embedded"
+              :src="caracteristique.imageUrl"
           ></v-img>
 
           <v-card-title v-html="caracteristique.title.rendered"></v-card-title>
 
           <v-card-text class="body-1 text-left secondary-color bigger-font">
             <p
-              v-html="
+                v-html="
                 caracteristique.acf
                   .texte_court_pour_lapercu_de_la_caracteristique
               "
@@ -46,12 +46,12 @@
       </v-col>
       <v-col cols="12">
         <v-btn
-          @click="caracteristiquesLoadMore()"
-          color="primary"
-          text
-          :disabled="!caracteristiqueHasMore"
-          class="font-weight-bold"
-          v-if="!isOnPageFlow"
+            @click="caracteristiquesLoadMore()"
+            color="primary"
+            text
+            :disabled="!caracteristiqueHasMore"
+            class="font-weight-bold"
+            v-if="!isOnPageFlow"
         >
           caractéristiques suivantes
           <v-icon right>navigate_next</v-icon>
@@ -65,36 +65,36 @@
 
     <v-row>
       <v-col
-        cols="12"
-        md="4"
-        xl="3"
-        v-for="nonCaracteristique in nonCaracteristiques"
-        :key="nonCaracteristique.id"
+          cols="12"
+          md="4"
+          xl="3"
+          v-for="nonCaracteristique in nonCaracteristiques"
+          :key="nonCaracteristique.id"
       >
         <v-card
-          class="mx-auto my-12"
-          max-width="374"
-          :to="nonCaracteristique.link"
-          style="background: rgb(255 255 255 / 15%)"
+            class="mx-auto my-12"
+            max-width="374"
+            @click="caracteristiqueClick(nonCaracteristique)"
+            style="background: rgb(255 255 255 / 15%)"
         >
           <v-img
-            height="250"
-            v-if="nonCaracteristique.imageUrl"
-            :src="nonCaracteristique.imageUrl"
+              height="250"
+              v-if="nonCaracteristique.imageUrl"
+              :src="nonCaracteristique.imageUrl"
           ></v-img>
 
           <v-card-title
-            v-html="nonCaracteristique.title.rendered"
+              v-html="nonCaracteristique.title.rendered"
           ></v-card-title>
 
           <v-card-text class="body-1 text-left secondary-color bigger-font">
             <p
-              v-html="
+                v-html="
                 nonCaracteristique.acf
                   .texte_court_pour_lapercu_de_la_non_caracteristique
               "
             ></p
-          ></v-card-text>
+            ></v-card-text>
         </v-card>
       </v-col>
       <v-col cols="12" v-if="nonCaracteristiqueLoading">
@@ -102,24 +102,42 @@
       </v-col>
       <v-col cols="12">
         <v-btn
-          @click="nonCaracteristiquesLoadMore()"
-          color="primary"
-          text
-          :disabled="!nonCaracteristiqueHasMore"
-          class="font-weight-bold"
-          v-if="!isOnPageFlow"
+            @click="nonCaracteristiquesLoadMore()"
+            color="primary"
+            text
+            :disabled="!nonCaracteristiqueHasMore"
+            class="font-weight-bold"
+            v-if="!isOnPageFlow"
         >
           non caractéristiques suivantes
           <v-icon right>navigate_next</v-icon>
         </v-btn>
       </v-col>
     </v-row>
+    <v-snackbar
+        v-model="longTextNotAvailableSnackbar"
+        timeout="6000"
+        light
+    >
+      Pas encore de long texte.
+      <template v-slot:action="{ attrs }">
+        <v-btn
+            color="secondary"
+            text
+            v-bind="attrs"
+            @click="longTextNotAvailableSnackbar = false"
+        >
+          Fermer
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
 <script>
 import Service from "@/Service";
 import PostFormat from "@/PostFormat";
+
 export default {
   name: "Caractéristiques.vue",
   data: function () {
@@ -134,18 +152,28 @@ export default {
       nonCaracteristiqueHasMore: true,
       caracteristiqueLoading: false,
       nonCaracteristiqueLoading: false,
+      longTextNotAvailableSnackbar: false,
       isOnPageFlow: false,
     };
   },
   mounted: async function () {
     this.isOnPageFlow = this.$route.name === "Caracteristiques";
-    if(this.isOnPageFlow){
+    if (this.isOnPageFlow) {
       this.nbPerPage = 99;
     }
     this.caracteristiquesLoadMore();
     this.nonCaracteristiquesLoadMore();
   },
   methods: {
+    caracteristiqueClick: async function (caracteristique) {
+      if (caracteristique.acf["est-ce_que_le_long_texte_est_pret"]) {
+        this.$router.push(caracteristique.link);
+      } else {
+        this.longTextNotAvailableSnackbar = false;
+        await this.$nextTick();
+        this.longTextNotAvailableSnackbar = true;
+      }
+    },
     caracteristiquesLoadMore: async function () {
       this.loadMore("caracteristique");
     },
@@ -155,11 +183,11 @@ export default {
     loadMore: async function (contentType) {
       this[contentType + "Loading"] = true;
       const contentTypePath =
-        contentType === "caracteristique"
-          ? "caracteristique"
-          : "non-caracteristique";
+          contentType === "caracteristique"
+              ? "caracteristique"
+              : "non-caracteristique";
       let response = await Service.api().get(
-        contentTypePath +
+          contentTypePath +
           "?_embed&per_page=" +
           this.nbPerPage +
           "&offset=" +

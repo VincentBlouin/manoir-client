@@ -1,5 +1,5 @@
 <template>
-  <v-row align-content="center" align="center" class="h-center mt-8">
+  <v-row align-content="center" align="center" class="h-center mt-8 mb-12">
     <v-col cols="12" sm="9" md="8" xl="5" v-if="caracteristique !== null">
       <v-img
         contain
