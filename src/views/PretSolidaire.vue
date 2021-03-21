@@ -58,11 +58,11 @@
     </v-row>
     <v-row class="h-center">
       <v-col cols="12" class="text-left body-1">
-        <v-card color="transparent" class="mb-6" flat>
+        <v-card color="transparent" flat>
           <v-card-title>
             Le projet
           </v-card-title>
-          <v-card-text class="body-1 black--text">
+          <v-card-text class="body-1 black--text pb-0">
             <p>
               Le transfert de propriété, pour que notre coopérative d'habitation devienne propriétaire de la maison et du
               terrain du fameux Manoir.
@@ -75,11 +75,11 @@
             </p>
           </v-card-text>
         </v-card>
-        <v-card color="transparent" class="mb-6" flat>
+        <v-card color="transparent" flat>
           <v-card-title>
             Pourquoi?
           </v-card-title>
-          <v-card-text class="body-1 black--text">
+          <v-card-text class="body-1 black--text pb-0">
             Parce que le Manoir est un projet <strong>collectif !</strong>
             <ul>
               <li>
@@ -115,11 +115,11 @@
             </ul>
           </v-card-text>
         </v-card>
-        <v-card color="transparent" class="mb-6" flat>
+        <v-card color="transparent" flat>
           <v-card-title>
             Qui nous sommes?
           </v-card-title>
-          <v-card-text class="body-1 black--text">
+          <v-card-text class="body-1 black--text pb-0">
             Le Manoir, c’est :
             <ul>
               <li>
@@ -146,11 +146,11 @@
             </ul>
           </v-card-text>
         </v-card>
-        <v-card color="transparent" class="mb-6" flat>
+        <v-card color="transparent" flat>
           <v-card-title>
             À quoi servira le prêt?
           </v-card-title>
-          <v-card-text class="body-1 black--text">
+          <v-card-text class="body-1 black--text pb-0">
             <ul>
               <li>
                 L’argent investit dans l’immobilier depuis les débuts est de 260 000$. 70 000$ ont déjà été payés par le
@@ -179,11 +179,11 @@
             </ul>
           </v-card-text>
         </v-card>
-        <v-card color="transparent" class="mb-6" flat>
+        <v-card color="transparent" flat>
           <v-card-title>
             Comment ça marche?
           </v-card-title>
-          <v-card-text class="body-1 black--text">
+          <v-card-text class="body-1 black--text pb-0">
             <ul>
               <li>
                 Vous choisissez pendant combien d’années vous souhaitez vous engager à nous prêter de l’argent. Plus
@@ -215,7 +215,7 @@
             Quels sont les risques?
           </v-card-title>
           <v-card-subtitle class="subtitle-1">et les stratégies auxquelles nous avons pensé</v-card-subtitle>
-          <v-card-text class="body-1 black--text">
+          <v-card-text class="body-1 black--text pb-0">
             <h4 class="mb-3">
               Pas de capacité de payer
             </h4>
