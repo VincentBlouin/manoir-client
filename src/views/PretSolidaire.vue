@@ -43,7 +43,7 @@
             </div>
             <div class="float-left text-left">
               <strong>{{ daysLeft }}</strong><br>
-              jours avant la fin
+              jours avant la fin (15 septembre 2021)
             </div>
           </v-card-text>
           <v-card-actions class="pl-0 mt-10">
@@ -64,12 +64,14 @@
           </v-card-title>
           <v-card-text class="body-1 black--text pb-0">
             <p>
-              Le transfert de propriété, pour que notre coopérative d'habitation devienne propriétaire de la maison et du
+              Le transfert de propriété, pour que notre coopérative d'habitation devienne propriétaire de la maison et
+              du
               terrain du fameux Manoir.
             </p>
             <p>
               65 acres, 1/3 en champs dont 5 acres en culture maraîchère, et 2/3 en forêt; une maison de 7 chambres, une
-              grange, un chalet; une haie-brise-vent en partie comestible, 12 pommiers matures et un jeune verger, plusieurs
+              grange, un chalet; une haie-brise-vent en partie comestible, 12 pommiers matures et un jeune verger,
+              plusieurs
               autres arbustes fruitiers et arbres à noix fraîchement planté; et une deuxième terre de 25 acres de forêt
               pionnière (post-coupe-à-blanc).
             </p>
@@ -86,13 +88,15 @@
                 Cohérence : c’est sa raison d’être; c’est sa réalité terrain; et c’est l’intention depuis le tout début.
               </li>
               <li>
-                Égalité : facilite et offre une meilleure garantie à tous les membres d’un partage du pouvoir et du partage
+                Égalité : facilite et offre une meilleure garantie à tous les membres d’un partage du pouvoir et du
+                partage
                 des
                 responsabilités.
               </li>
               <li>
                 Justice : les ressources (temps, argent, etc.) qui ont été investies sont le fruit de la contribution de
-                dizaines de personnes. Ces dons et échanges ont été faits dans l’intention de servir une cause plus grande
+                dizaines de personnes. Ces dons et échanges ont été faits dans l’intention de servir une cause plus
+                grande
                 et
                 durable que la propriété privée de certains individus. La meilleure façon de le reconnaître, c’est
                 d’officialiser la propriété collective.
@@ -101,11 +105,13 @@
                 Liberté : Parce que c’est notre choix!
               </li>
               <li>
-                Innovation : Le système actuel met étonnemment de bâtons dans les roues. Partager la propriété et chercher
+                Innovation : Le système actuel met étonnemment de bâtons dans les roues. Partager la propriété et
+                chercher
                 une
                 alternative à la propriété privée, c’est se retrouver en tant que minorité face à un monopole. Les
                 assurances,
-                institutions financières, cadres légaux qui crée les formes légales et les règlements de zonage, ne sont pas
+                institutions financières, cadres légaux qui crée les formes légales et les règlements de zonage, ne sont
+                pas
                 habituées, ni intéressées, par la diversité, et font preuve d’un grand manque d’ouverture. Il n’y a pas
                 beaucoup
                 de place pour l’innovation dans cet univers. Or, il faut pouvoir tester autre chose pour trouver des
@@ -123,20 +129,24 @@
             Le Manoir, c’est :
             <ul>
               <li>
-                Une communauté à partage de revenu : une des rares au Québec, mais l’une parmi de nombreuses initiatives en
+                Une communauté à partage de revenu : une des rares au Québec, mais l’une parmi de nombreuses initiatives
+                en
                 Amérique et dans le monde.
               </li>
               <li>
-                Un collectif qui existe depuis 5 ans! On possède et on gère ensemble : une ferme bio, un verger, une forêt
+                Un collectif qui existe depuis 5 ans! On possède et on gère ensemble : une ferme bio, un verger, une
+                forêt
                 (bois
                 de chauffage, de construction, petite érablière en devenir, plantations diverses et sentiers). On a
                 accueilli
                 une centaine de visiteurs-bénévoles, et plusieurs party!
               </li>
               <li>
-                On vit simplement, et on jouit d’une grande qualité de vie : repas sains, frais, locaux… cuisinés! Proximité
+                On vit simplement, et on jouit d’une grande qualité de vie : repas sains, frais, locaux… cuisinés!
+                Proximité
                 de
-                la nature, mode de vie actif, vie sociale active, etc. Et tout ça avec un revenu annuel moyen de 15 000$ par
+                la nature, mode de vie actif, vie sociale active, etc. Et tout ça avec un revenu annuel moyen de 15 000$
+                par
                 personne.
               </li>
               <li>
@@ -328,17 +338,26 @@ export default {
       objective: 150000,
       percentageReceived: null,
       nbLender: 2,
-      daysLeft: 300,
+      daysLeft: 0,
       tabs: null,
       action: false
     }
   },
   mounted: function () {
     this.percentageReceived = Math.ceil(this.moneyReceived / this.objective * 100);
+    this.daysLeft = this.daysRemaining(
+        new Date(),
+        new Date(2021, 8, 15)
+    );
   },
   methods: {
     formatPrice(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    },
+    daysRemaining: function (firstDate, secondDate) {
+      const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+      const diffDays = Math.ceil((secondDate - firstDate) / oneDay);
+      return Math.max(0, diffDays);
     }
   }
 }
