@@ -67,7 +67,7 @@ export default {
       comments: [],
     };
   },
-  mounted: async function () {
+  mounted: function () {
     this.rebuild();
   },
   watch: {
@@ -77,6 +77,10 @@ export default {
   },
   methods: {
     rebuild: async function () {
+      this.article = null;
+      this.isArticle = true;
+      this.noContentError = false;
+      this.comments = [];
       let response = await Service.api().get(
           "posts?_embed=1&slug=" + this.$route.params.slug
       );
