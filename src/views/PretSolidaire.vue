@@ -57,7 +57,7 @@
       </v-col>
     </v-row>
     <v-row class="h-center">
-      <v-col cols="12" class="text-left body-1">
+      <v-col cols="12" lg="8" class="text-left body-1">
         <v-card color="transparent" flat>
           <v-card-title>
             Le projet
@@ -293,6 +293,35 @@
           </v-card-text>
         </v-card>
       </v-col>
+      <v-col cols="12" lg="4" class="text-left body-1">
+        <v-row v-for="forfait in forfaits" :key="forfait.duration">
+          <v-col cols="12">
+            <v-card color="transparent">
+              <v-card-title class="subtitle-1">
+                Prêt de {{ forfait.duration }} ans
+              </v-card-title>
+              <v-card-text>
+                <strong>
+                  Livraison prévue
+                </strong>
+                {{ forfait.delivery }}
+              </v-card-text>
+              <v-card-text>
+                <strong>
+                  Taux d'intérêt moyen
+                </strong>
+                {{ forfait.interest }}
+              </v-card-text>
+              <v-card-text>
+                <strong>
+                  Stocks limités
+                </strong>
+                {{ forfait.stock }} sur {{ forfait.totalStock }}
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-col>
     </v-row>
     <v-row class="mt-12">
       <v-col cols="12">
@@ -340,7 +369,82 @@ export default {
       nbLender: 2,
       daysLeft: 0,
       tabs: null,
-      action: false
+      action: false,
+      forfaits: [{
+        duration: 10,
+        delivery: "Octobre 2031",
+        interest: "5,50%",
+        stock: 0,
+        totalStock: 10
+      },
+        {
+          duration: 9,
+          delivery: "Octobre 2030",
+          interest: "5,00%",
+          stock: 0,
+          totalStock: 14
+        },
+        {
+          duration: 8,
+          delivery: "Octobre 2029",
+          interest: "4,50%",
+          stock: 0,
+          totalStock: 13
+        },
+        {
+          duration: 7,
+          delivery: "Octobre 2028",
+          interest: "4,00%",
+          stock: 0,
+          totalStock: 12
+        },
+        {
+          duration: 6,
+          delivery: "Octobre 2027",
+          interest: "3,50%",
+          stock: 0,
+          totalStock: 12
+        },
+        {
+          duration: 5,
+          delivery: "Octobre 2026",
+          interest: "3,00%",
+          stock: 0,
+          totalStock: 12
+        },
+        {
+          duration: 4,
+          delivery: "Octobre 2025",
+          interest: "2,50%",
+          stock: 0,
+          totalStock: 12,
+          condition: 60
+        },
+        {
+          duration: 3,
+          delivery: "Octobre 2024",
+          interest: "2,00%",
+          stock: 0,
+          totalStock: 13,
+          condition: 70
+        },
+        {
+          duration: 2,
+          delivery: "Octobre 2023",
+          interest: "1,50%",
+          stock: 0,
+          totalStock: 13,
+          condition: 80
+        },
+        {
+          duration: 1,
+          delivery: "Octobre 2022",
+          interest: "1,00%",
+          stock: 0,
+          totalStock: 14,
+          condition: 90
+        },
+      ]
     }
   },
   mounted: function () {
