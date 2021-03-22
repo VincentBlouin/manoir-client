@@ -57,7 +57,7 @@
       </v-col>
     </v-row>
     <v-row class="h-center">
-      <v-col cols="12" lg="8" xl="9" class="text-left body-1">
+      <v-col cols="12" lg="9" class="text-left body-1">
         <v-card color="transparent" flat>
           <v-card-title>
             Le projet
@@ -293,7 +293,7 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols="12" lg="4" xl="3" class="text-left body-1">
+      <v-col cols="12" lg="3" class="text-left body-1">
         <v-row v-for="forfait in forfaits" :key="forfait.duration">
           <v-col cols="12">
             <v-card color="transparent">
