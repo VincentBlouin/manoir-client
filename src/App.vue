@@ -90,6 +90,20 @@
             </v-btn>
           </v-list-item-title>
         </v-list-item>
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/documents" :small="$vuetify.breakpoint.lgOnly">
+              Documents
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/références" :small="$vuetify.breakpoint.lgOnly">
+              Références
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
         <v-subheader color="secondary" class="">Contact</v-subheader>
         <v-divider></v-divider>
         <v-list-item href="mailto:manoir.intentionnel@gmail.com" class="body-1">
@@ -166,6 +180,27 @@
           <v-list-item-title>
             <v-btn text color="secondary" class="" to="/nous-recrutons">
               Nous recrutons
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/liens" :small="$vuetify.breakpoint.lgOnly">
+              Initiatives et outils
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/documents" :small="$vuetify.breakpoint.lgOnly">
+              Documents
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text color="secondary" class="" to="/références" :small="$vuetify.breakpoint.lgOnly">
+              Références
             </v-btn>
           </v-list-item-title>
         </v-list-item>
@@ -321,9 +356,9 @@ body {
   word-break: inherit !important;
 }
 
-figcaption{
-  text-align:center;
-  margin-bottom:30px;
+figcaption {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 
