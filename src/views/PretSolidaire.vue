@@ -615,10 +615,10 @@ export default {
   },
   data: function () {
     return {
-      moneyReceived: 4000,
+      moneyReceived: 0,
       objective: 150000,
       percentageReceived: null,
-      nbLender: 2,
+      nbLender: 0,
       daysLeft: 0,
       tabs: null,
       action: false,
