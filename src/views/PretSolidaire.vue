@@ -218,6 +218,255 @@
                 d’ici 10 ans.
               </li>
             </ul>
+            <v-card color="white" class="mt-4 mb-4">
+              <v-card-subtitle class="text-center body-1">
+                Voici à quoi ça ressemble pour un prêt de 1000$
+              </v-card-subtitle>
+              <v-simple-table>
+                <template v-slot:default>
+                  <thead>
+                  <tr>
+                    <th class="text-right" colspan="2">
+                      Taux d'intérêt moyen
+                    </th>
+                    <th class="text-center">
+                      Total intérêts
+                    </th>
+                    <th class="text-center ml-2 mr-2"></th>
+                    <th class="text-center" colspan="2">
+                      Taux d'intérêt progressif
+                    </th>
+                    <th class="text-center">
+                      Intérêt annuel
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      Durée du prêt
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="ml-2 mr-2"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      1 an
+                    </td>
+                    <td class="text-center">
+                      1,00%
+                    </td>
+                    <td class="text-center">
+                      10,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      1ere année
+                    </td>
+                    <td class="text-center">
+                      1,00%
+                    </td>
+                    <td class="text-center">
+                      10,00$
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      2 ans
+                    </td>
+                    <td class="text-center">
+                      1,50%
+                    </td>
+                    <td class="text-center">
+                      30,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      2e année
+                    </td>
+                    <td class="text-center">
+                      2,00%
+                    </td>
+                    <td class="text-center">
+                      20,00$
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      3 ans
+                    </td>
+                    <td class="text-center">
+                      2,00%
+                    </td>
+                    <td class="text-center">
+                      60,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      3e année
+                    </td>
+                    <td class="text-center">
+                      3,00%
+                    </td>
+                    <td class="text-center">
+                      30,00$
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      4 ans
+                    </td>
+                    <td class="text-center">
+                      2,50%
+                    </td>
+                    <td class="text-center">
+                      100,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      4e année
+                    </td>
+                    <td class="text-center">
+                      4,00%
+                    </td>
+                    <td class="text-center">
+                      40,00$
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      5 ans
+                    </td>
+                    <td class="text-center">
+                      3,00%
+                    </td>
+                    <td class="text-center">
+                      150,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      5e année
+                    </td>
+                    <td class="text-center">
+                      5,00%
+                    </td>
+                    <td class="text-center">
+                      50,00$
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      6 ans
+                    </td>
+                    <td class="text-center">
+                      3,50%
+                    </td>
+                    <td class="text-center">
+                      210,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      6e année
+                    </td>
+                    <td class="text-center">
+                      6,00%
+                    </td>
+                    <td class="text-center">
+                      60,00$
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      7 ans
+                    </td>
+                    <td class="text-center">
+                      4,00%
+                    </td>
+                    <td class="text-center">
+                      280,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      7e année
+                    </td>
+                    <td class="text-center">
+                      7,00%
+                    </td>
+                    <td class="text-center">
+                      70,00$
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      8 ans
+                    </td>
+                    <td class="text-center">
+                      4,50%
+                    </td>
+                    <td class="text-center">
+                      360,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      8e année
+                    </td>
+                    <td class="text-center">
+                      8,00%
+                    </td>
+                    <td class="text-center">
+                      80,00$
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      9 ans
+                    </td>
+                    <td class="text-center">
+                      5,00%
+                    </td>
+                    <td class="text-center">
+                      450,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      9e année
+                    </td>
+                    <td class="text-center">
+                      9,00%
+                    </td>
+                    <td class="text-center">
+                      90,00$
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      10 ans
+                    </td>
+                    <td class="text-center">
+                      5,50%
+                    </td>
+                    <td class="text-center">
+                      555,00$
+                    </td>
+                    <td class="ml-2 mr-2"></td>
+                    <td class="text-left">
+                      10e année
+                    </td>
+                    <td class="text-center">
+                      10,00%
+                    </td>
+                    <td class="text-center">
+                      100,00$
+                    </td>
+                  </tr>
+                  </tbody>
+                </template>
+              </v-simple-table>
+            </v-card>
           </v-card-text>
         </v-card>
         <v-card color="transparent" flat>
@@ -319,7 +568,7 @@
                 {{ forfait.stock }} sur {{ forfait.totalStock }}
               </v-card-text>
               <v-card-text class="font-italic pt-0" v-if="forfait.condition">
-                *Disponible lorsque nous aurons atteint {{forfait.condition}}% de notre objectif
+                *Disponible lorsque nous aurons atteint {{ forfait.condition }}% de notre objectif
               </v-card-text>
             </v-card>
           </v-col>
