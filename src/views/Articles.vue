@@ -9,10 +9,11 @@
       Articles des membres
     </h1>
     <v-subheader class="vh-center text-h6 font-weight-regular mb-4">
-      Passés et présents
+      <span v-if="tagId">Associés à cette caractéristique</span>
+      <span v-else>Passés et présents</span>
     </v-subheader>
 
-    <v-row class="vh-center">
+    <v-row class="vh-center" v-if="!tagId">
       <v-col cols="12" md="6" lg="4">
         <v-text-field placeholder="Chercher parmis les articles" v-model="searchText" @keyup="search">
           <v-icon
@@ -65,8 +66,14 @@
       </v-col>
     </v-row>
     <infinite-loading @infinite="infiniteHandler" :key="searchKey">
-      <div slot="no-more">Fin des articles</div>
-      <div slot="no-results">Fin des articles</div>
+      <div slot="no-more">
+        <span v-if="tagId"></span>
+        <span v-else>Fin des articles</span>
+      </div>
+      <div slot="no-results">
+        <span v-if="tagId"></span>
+        <span v-else>Fin des articles</span>
+      </div>
     </infinite-loading>
   </div>
 </template>
@@ -79,6 +86,7 @@ import PostFormat from "@/PostFormat";
 let searchTimeout = null;
 export default {
   name: "Articles.vue",
+  props: ['tagId'],
   components: {
     InfiniteLoading,
   },
@@ -97,11 +105,15 @@ export default {
   methods: {
     infiniteHandler: async function ($state) {
       let searchQueryPart = "";
+      let tagQueryPart = "";
       if (this.searchText !== null && this.searchText.trim() !== "") {
         searchQueryPart = '&search=' + this.searchText;
       }
+      if (this.tagId) {
+        tagQueryPart = "&tags=" + this.tagId;
+      }
       const response = await Service.api().get(
-          "posts?_embed&per_page=8&offset=" + this.articlesPage * 8 + searchQueryPart
+          "posts?_embed&per_page=8&offset=" + this.articlesPage * 8 + searchQueryPart + tagQueryPart
       );
       const articles = response.data.map(PostFormat.forThumb);
       if (articles.length) {
