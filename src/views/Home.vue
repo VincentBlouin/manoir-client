@@ -1,21 +1,25 @@
 <template>
   <div class="home">
     <v-row
-      class="vh-center pb-4"
-      :class="{
+        class="vh-center pb-4"
+        :class="{
         'pt-14': $vuetify.breakpoint.lgAndUp,
       }"
     >
       <v-col cols="12" md="8" lg="6">
         <v-card flat class="pt-14 pb-14" color="transparent">
           <v-card-title
-            class="pt-0 pb-8 text-center font-weight-thin mt-6 text-center text-h2 vh-center"
+              class="pt-0 pb-8 text-center font-weight-thin mt-6 text-center text-h2 vh-center"
           >
             <!--            <h1 class="text-h2  font-weight-light mt-6 text-center" style="">-->
             <!--              Work on your personal <span style="white-space: nowrap">knowledge</span> graph-->
             <!--            </h1>-->
             Un mode de vie qui fait du sens
           </v-card-title>
+          <v-card-subtitle class="text-h6 font-weight-regular text-center">
+            Communauté intentionnelle à partage de revenu, dans la Baie des
+            Chaleurs.
+          </v-card-subtitle>
           <v-card-title class="vh-center">
             <!--            <h4 class="text-h6 font-weight-bold text-center">-->
             <!--              In mindrespect.com, the graph is not just an analogy or a view only feature. Your notes, tags, relationships it's a first class feature becomes a reality and it becomes more intuitive to create links between ideas, to merge them, to restructure them, in short to make them evolve.-->
@@ -24,11 +28,10 @@
             <!--              Benefit from the power of the underlying graph database that allows you to create links between your ideas, to merge them, to restructure them, in short to make them evolve.-->
             <!--            </h4>-->
             <h4
-              class="text-h6 font-weight-regular text-justify"
-              style="line-height: 2"
+                class="text-h6 font-weight-regular text-justify"
+                style="line-height: 2"
             >
-              Communauté intentionnelle à partage de revenu, dans la Baie des
-              Chaleurs. Nous visons à créer et maintenir un environnement humain
+              Nous visons à créer et maintenir un environnement humain
               sain et sécuritaire qui permet et favorise l’égalité de pouvoir et
               le partage et la mise en commun des ressources de manière durable.
               <!--            in the spirit of the <a-->
@@ -37,18 +40,18 @@
           </v-card-title>
           <v-card-actions class="pt-8">
             <v-spacer></v-spacer>
-            <v-btn color="secondary" text x-large to="/nous-recrutons"> Nous recrutons </v-btn>
+            <v-btn color="secondary" text x-large to="/nous-recrutons"> Nous recrutons</v-btn>
             <v-divider
-              vertical
-              class="mr-8 ml-8"
-              v-if="$vuetify.breakpoint.mdAndUp"
+                vertical
+                class="mr-8 ml-8"
+                v-if="$vuetify.breakpoint.mdAndUp"
             ></v-divider>
             <v-btn
-              color="secondary"
-              text
-              x-large
-              v-if="$vuetify.breakpoint.mdAndUp"
-              to="/pret-solidaire"
+                color="secondary"
+                text
+                x-large
+                v-if="$vuetify.breakpoint.mdAndUp"
+                to="/pret-solidaire"
             >
               Prêt solidaire
             </v-btn>
@@ -57,7 +60,7 @@
           <v-divider v-if="$vuetify.breakpoint.smAndDown"></v-divider>
           <v-card-actions v-if="$vuetify.breakpoint.smAndDown">
             <v-spacer></v-spacer>
-            <v-btn color="secondary" text x-large> Prêt solidaire </v-btn>
+            <v-btn color="secondary" text x-large> Prêt solidaire</v-btn>
             <v-spacer></v-spacer>
           </v-card-actions>
         </v-card>
@@ -72,27 +75,27 @@
       <v-col cols="12" lg="9" xl="7">
         <v-carousel height="700">
           <v-carousel-item
-            v-for="(image, i) in images"
-            :key="i"
-            :src="image.src"
-            reverse-transition="fade-transition"
-            transition="fade-transition"
+              v-for="(image, i) in images"
+              :key="i"
+              :src="image.src"
+              reverse-transition="fade-transition"
+              transition="fade-transition"
           >
             <v-row style="height: 100%" v-if="image.legend">
               <v-col
-                cols="12"
-                align-self="bottom"
-                style="
+                  cols="12"
+                  align-self="bottom"
+                  style="
                   display: flex;
                   align-items: flex-start;
                   justify-content: center;
                 "
               >
                 <v-sheet
-                  tile
-                  class="pa-2 font-weight-thin"
-                  width="100%"
-                  style="background-color: #00000085 !important"
+                    tile
+                    class="pa-2 font-weight-thin"
+                    width="100%"
+                    style="background-color: #00000085 !important"
                 >
                   {{ image.legend }}
                 </v-sheet>
@@ -109,6 +112,7 @@
 
 <script>
 import Service from "@/Service";
+
 export default {
   name: "Home",
   components: {
