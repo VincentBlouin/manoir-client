@@ -48,8 +48,8 @@
             Prêt Solidaire
           </v-btn>
           <v-divider vertical class="ml-2 mr-2"></v-divider>
-          <v-btn text color="secondary" class="" to="/nous-recrutons" :small="$vuetify.breakpoint.lgOnly">
-            Nous recrutons
+          <v-btn text color="secondary" class="" to="/recrutement" :small="$vuetify.breakpoint.lgOnly">
+            Recrutement
           </v-btn>
         </v-toolbar-items>
         <v-app-bar-nav-icon
@@ -160,9 +160,9 @@
             Prêt Solidaire
           </v-list-item-title>
         </v-list-item>
-        <v-list-item to="/nous-recrutons">
+        <v-list-item to="/recrutement">
           <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
-            Nous recrutons
+            Recrutement
           </v-list-item-title>
         </v-list-item>
         <v-list-item to="/liens">
