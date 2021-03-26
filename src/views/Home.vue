@@ -121,7 +121,7 @@ export default {
     };
   },
   mounted: async function () {
-    let response = await Service.api().get("image-avant");
+    let response = await Service.api().get("image-avant?per_page=30");
     this.images = response.data.map((image) => {
       image.src = image.acf.image_avant.sizes.large;
       return image;
