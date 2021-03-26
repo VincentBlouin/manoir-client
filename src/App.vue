@@ -76,32 +76,24 @@
           'background-repeat': 'repeat',
         }"
       >
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/caracteristiques" :small="$vuetify.breakpoint.lgOnly">
-              Nos Caractéristiques
-            </v-btn>
+        <v-list-item to="/caracteristiques">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Nos Caractéristiques
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/liens" :small="$vuetify.breakpoint.lgOnly">
-              Initiatives et outils
-            </v-btn>
+        <v-list-item to="/liens">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Initiatives et outils
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/documents" :small="$vuetify.breakpoint.lgOnly">
-              Documents
-            </v-btn>
+        <v-list-item to="/documents">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Documents
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/références" :small="$vuetify.breakpoint.lgOnly">
-              Références
-            </v-btn>
+        <v-list-item to="/références">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Références
           </v-list-item-title>
         </v-list-item>
         <v-subheader color="secondary" class="">Contact</v-subheader>
@@ -148,60 +140,44 @@
           'background-repeat': 'repeat',
         }"
       >
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/le-projet">
-              À propos
-            </v-btn>
+        <v-list-item to="/le-projet">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            À propos
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/caracteristiques">
-              Nos Caractéristiques
-            </v-btn>
+        <v-list-item to="/caracteristiques">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Nos Caractéristiques
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/articles">
-              Articles des membres
-            </v-btn>
+        <v-list-item to="/articles">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Articles des membres
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/pret-solidaire">
-              Prêt Solidaire
-            </v-btn>
+        <v-list-item to="/pret-solidaire">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Prêt Solidaire
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/nous-recrutons">
-              Nous recrutons
-            </v-btn>
+        <v-list-item to="/nous-recrutons">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Nous recrutons
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/liens" :small="$vuetify.breakpoint.lgOnly">
-              Initiatives et outils
-            </v-btn>
+        <v-list-item to="/liens">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Initiatives et outils
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/documents" :small="$vuetify.breakpoint.lgOnly">
-              Documents
-            </v-btn>
+        <v-list-item to="/documents">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Documents
           </v-list-item-title>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-title>
-            <v-btn text color="secondary" class="" to="/références" :small="$vuetify.breakpoint.lgOnly">
-              Références
-            </v-btn>
+        <v-list-item to="/références">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Références
           </v-list-item-title>
         </v-list-item>
         <v-subheader color="secondary" class="">Contact</v-subheader>
@@ -241,6 +217,33 @@
       </v-navigation-drawer>
       <router-view class="pt-12"/>
     </v-app>
+    <v-footer padless :style="{
+        background: 'url(' + require('@/assets/noise3.jpg') + ')',
+        'background-repeat': 'repeat',
+      }">
+      <v-col
+          class="text-center"
+          cols="12"
+      >
+        <v-btn icon href="mailto:manoir.intentionnel@gmail.com" large style="margin-right:15px">
+          <v-icon large>
+            mail
+          </v-icon>
+        </v-btn>
+        <v-btn href="https://www.facebook.com/lemanoir.community" plain class="img-button">
+          <img
+              src="https://facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png?w=30&h=30"
+          />
+        </v-btn>
+        <v-btn href="https://www.instagram.com/lemanoir.community" plain class="img-button">
+          <v-img
+              width="32"
+              :src="require('@/assets/instagram.svg')"
+          >
+          </v-img>
+        </v-btn>
+      </v-col>
+    </v-footer>
   </div>
 </template>
 
@@ -272,6 +275,10 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 
 body {
+}
+
+.img-button .v-btn__content {
+  opacity: 1 !important;
 }
 
 .primary-color {
