@@ -40,6 +40,11 @@
             À propos
           </v-btn>
           <v-divider vertical class="ml-2 mr-2"></v-divider>
+          <v-btn text color="secondary" class="" to="/caracteristiques"
+                 :small="$vuetify.breakpoint.lgOnly">
+            Nos Caractéristiques
+          </v-btn>
+          <v-divider vertical class="ml-2 mr-2"></v-divider>
           <v-btn text color="secondary" class="" to="/articles" :small="$vuetify.breakpoint.lgOnly">
             Articles des membres
           </v-btn>
@@ -76,11 +81,6 @@
           'background-repeat': 'repeat',
         }"
       >
-        <v-list-item to="/caracteristiques">
-          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
-            Nos Caractéristiques
-          </v-list-item-title>
-        </v-list-item>
         <v-list-item to="/liens">
           <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
             Initiatives et outils
