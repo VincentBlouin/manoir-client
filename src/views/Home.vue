@@ -78,7 +78,7 @@
               v-for="(image, i) in images"
               :key="i"
           >
-            <div style="min-height: 700px;">
+            <div>
               <v-img :src="image.src">
                 <template v-slot:placeholder>
                   <v-row

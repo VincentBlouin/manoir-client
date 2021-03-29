@@ -96,6 +96,11 @@
             Références
           </v-list-item-title>
         </v-list-item>
+        <v-list-item to="/presse">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Presse
+          </v-list-item-title>
+        </v-list-item>
         <v-subheader color="secondary" class="">Contact</v-subheader>
         <v-divider></v-divider>
         <v-list-item href="mailto:manoir.intentionnel@gmail.com" class="body-1">
@@ -178,6 +183,11 @@
         <v-list-item to="/références">
           <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
             Références
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item to="/presse">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            Presse
           </v-list-item-title>
         </v-list-item>
         <v-subheader color="secondary" class="">Contact</v-subheader>
@@ -366,6 +376,11 @@ body {
 figcaption {
   text-align: center;
   margin-bottom: 30px;
+}
+
+blockquote {
+  margin-top:-20px;
+  margin-left:20px;
 }
 
 
