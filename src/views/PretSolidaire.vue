@@ -48,7 +48,7 @@
           </v-card-text>
           <v-card-actions class="pl-0 mt-10">
             <v-spacer v-if="$vuetify.breakpoint.lgAndDown"></v-spacer>
-            <v-btn color="secondary" x-large @click="action=true">
+            <v-btn color="secondary" x-large href="https://docs.google.com/forms/d/e/1FAIpQLSf0oX-4Pq8Oha0VW3RrBbaO7v0YUkrg-K9TsYi3E_0BEZvtEA/viewform?ts=60622511&gxids=7628">
               Je soutiens ce projet
             </v-btn>
             <v-spacer v-if="$vuetify.breakpoint.lgAndDown"></v-spacer>
@@ -577,7 +577,7 @@
     </v-row>
     <v-row class="mt-12">
       <v-col cols="12">
-        <v-btn color="secondary" x-large @click="action=true">
+        <v-btn color="secondary" x-large href="https://docs.google.com/forms/d/e/1FAIpQLSf0oX-4Pq8Oha0VW3RrBbaO7v0YUkrg-K9TsYi3E_0BEZvtEA/viewform?ts=60622511&gxids=7628">
           Je soutiens ce projet
         </v-btn>
       </v-col>

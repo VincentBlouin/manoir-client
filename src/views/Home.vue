@@ -14,7 +14,7 @@
             <!--            <h1 class="text-h2  font-weight-light mt-6 text-center" style="">-->
             <!--              Work on your personal <span style="white-space: nowrap">knowledge</span> graph-->
             <!--            </h1>-->
-            Un mode de vie qui fait du sens
+            Un mode de vie qui a du sens
           </v-card-title>
           <v-card-subtitle class="text-h6 font-weight-regular text-center">
             Communauté intentionnelle à partage de revenu, dans la Baie des
@@ -32,7 +32,7 @@
                 style="line-height: 2"
             >
               Nous visons à créer et maintenir un environnement humain
-              sain et sécuritaire qui permet et favorise l’égalité de pouvoir et
+              sain et sécuritaire qui permet et favorise l’égalité de pouvoir,
               le partage et la mise en commun des ressources de manière durable.
               <!--            in the spirit of the <a-->
               <!--              href="https://en.wikipedia.org/wiki/Zettelkasten">Zettelkasten method</a>-->
