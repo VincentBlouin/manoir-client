@@ -8,7 +8,7 @@ const Service = {
     baseUrl: function () {
         // const apiPort = process.env.VUE_APP_API_PORT || '443';
         // return location.protocol + '//' + location.hostname + ':' + apiPort + '/api';
-        return "http://2021.manoir.community/wp-json/wp/v2/";
+        return "https://manoir.community/wp-json/wp/v2/";
     },
     api: function () {
         const axiosInstance = axios.create({

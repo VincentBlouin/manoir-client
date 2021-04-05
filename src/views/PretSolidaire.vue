@@ -585,7 +585,7 @@
     <v-dialog v-model="action" fullscreen>
       <v-card :style="{
         background: 'url(' + require('@/assets/noise3.jpg') + ')',
-        'background-repeat': 'repeat',
+        'background-repeat': 'repeat'
       }">
         <v-toolbar
             color="transparent"
