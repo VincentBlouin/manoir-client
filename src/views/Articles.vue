@@ -37,6 +37,9 @@
             class="mx-auto my-12"
             max-width="374"
             :to="article.link"
+            :class="{
+              'mt-0 mb-0': $vuetify.breakpoint.smAndDown
+            }"
             style="background: rgb(255 255 255 / 15%)"
         >
           <v-img

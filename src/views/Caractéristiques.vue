@@ -20,6 +20,9 @@
         <v-card
             class="mx-auto my-12"
             max-width="374"
+            :class="{
+              'mt-0 mb-0': $vuetify.breakpoint.smAndDown
+            }"
             @click="caracteristiqueClick(caracteristique)"
             style="background: rgb(255 255 255 / 15%)"
         >
@@ -75,6 +78,9 @@
             class="mx-auto my-12"
             max-width="374"
             @click="caracteristiqueClick(nonCaracteristique)"
+            :class="{
+              'mt-0 mb-0': $vuetify.breakpoint.smAndDown
+            }"
             style="background: rgb(255 255 255 / 15%)"
         >
           <v-img
