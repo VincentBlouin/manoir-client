@@ -73,7 +73,7 @@
 
     <v-row class="vh-center">
       <v-col cols="12" lg="9" xl="7">
-        <v-carousel height="700">
+        <v-carousel :height="carouselHeight">
           <v-carousel-item
               v-for="(image, i) in images"
               :key="i"
@@ -135,9 +135,13 @@ export default {
   data: function () {
     return {
       images: [],
+      carouselHeight: 700
     };
   },
   mounted: async function () {
+    if(this.$vuetify.breakpoint.smAndDown){
+      this.carouselHeight = 300;
+    }
     let response = await Service.api().get("image-avant?per_page=30");
     this.images = response.data.map((image) => {
       image.isLoaded = false;
