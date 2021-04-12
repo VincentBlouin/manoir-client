@@ -60,7 +60,7 @@
           <v-divider v-if="$vuetify.breakpoint.smAndDown"></v-divider>
           <v-card-actions v-if="$vuetify.breakpoint.smAndDown">
             <v-spacer></v-spacer>
-            <v-btn color="secondary" text x-large> Prêt solidaire</v-btn>
+            <v-btn color="secondary" text x-large to="/pret-solidaire"> Prêt solidaire</v-btn>
             <v-spacer></v-spacer>
           </v-card-actions>
         </v-card>
