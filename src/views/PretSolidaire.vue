@@ -541,28 +541,6 @@
         </v-btn>
       </v-col>
     </v-row>
-    <v-dialog v-model="action" fullscreen>
-      <v-card :style="{
-        background: 'url(' + require('@/assets/noise3.jpg') + ')',
-        'background-repeat': 'repeat'
-      }">
-        <v-toolbar
-            color="transparent"
-            flat
-        >
-          <v-btn
-              icon
-              @click="action = false"
-          >
-            <v-icon color="secondary">mdi-close</v-icon>
-          </v-btn>
-          <v-toolbar-title>Je prête un montant !</v-toolbar-title>
-        </v-toolbar>
-        <v-card-text class="text-left">
-          blabla
-        </v-card-text>
-      </v-card>
-    </v-dialog>
   </Page>
 </template>
 
@@ -574,18 +552,17 @@ export default {
   },
   data: function () {
     return {
-      moneyReceived: 0,
+      moneyReceived: 42000,
       objective: 190000,
       percentageReceived: null,
-      nbLender: 0,
+      nbLender: 1,
       daysLeft: 0,
       tabs: null,
-      action: false,
       forfaits: [{
         duration: 10,
         delivery: "Octobre 2031",
         interest: "5,50%",
-        stock: 0,
+        stock: 42,
         totalStock: 104
       },
         {
