@@ -35,6 +35,11 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-md-and-down">
+          <v-btn text color="secondary" class="" to="/images"
+                 :small="$vuetify.breakpoint.lgOnly" v-if="$vuetify.breakpoint.xlOnly">
+            En images
+          </v-btn>
+          <v-divider vertical class="ml-2 mr-2" v-if="$vuetify.breakpoint.xlOnly"></v-divider>
           <v-btn text color="secondary" class="" to="/le-projet"
                  :small="$vuetify.breakpoint.lgOnly">
             À propos
@@ -81,6 +86,11 @@
           'background-repeat': 'repeat',
         }"
       >
+        <v-list-item to="/images" v-if="$vuetify.breakpoint.lgOnly">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            En images
+          </v-list-item-title>
+        </v-list-item>
         <v-list-item to="/liens">
           <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
             Initiatives et outils
@@ -145,6 +155,11 @@
           'background-repeat': 'repeat',
         }"
       >
+        <v-list-item to="/images">
+          <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
+            En images
+          </v-list-item-title>
+        </v-list-item>
         <v-list-item to="/le-projet">
           <v-list-item-title class="secondary-color text-uppercase v-btn v-size--default">
             À propos
@@ -379,8 +394,8 @@ figcaption {
 }
 
 blockquote {
-  margin-top:-20px;
-  margin-left:20px;
+  margin-top: -20px;
+  margin-left: 20px;
 }
 
 
