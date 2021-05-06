@@ -19,9 +19,9 @@
             src="https://manoir.community/wp-content/uploads/2021/02/dessin-judith.jpg"
         >
         </v-img>
-<!--        <iframe width="560" height="315" src="https://www.youtube.com/embed/cICr-qMmp7Q" frameborder="0"-->
-<!--                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
-<!--                allowfullscreen></iframe>-->
+        <!--        <iframe width="560" height="315" src="https://www.youtube.com/embed/cICr-qMmp7Q" frameborder="0"-->
+        <!--                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
+        <!--                allowfullscreen></iframe>-->
       </v-col>
       <v-col cols="12" md="7" xl="6" align-self="center">
         <v-card flat color="transparent" class="pl-10">
@@ -55,7 +55,8 @@
     </v-row>
     <v-row class="mt-12">
       <v-col cols="12">
-        <v-btn color="secondary" x-large href="https://docs.google.com/forms/d/e/1FAIpQLSf0oX-4Pq8Oha0VW3RrBbaO7v0YUkrg-K9TsYi3E_0BEZvtEA/viewform?ts=60622511&gxids=7628">
+        <v-btn color="secondary" x-large
+               href="https://docs.google.com/forms/d/e/1FAIpQLSf0oX-4Pq8Oha0VW3RrBbaO7v0YUkrg-K9TsYi3E_0BEZvtEA/viewform?ts=60622511&gxids=7628">
           Je soutiens ce projet
         </v-btn>
       </v-col>
@@ -70,10 +71,12 @@
             <p>
               Le transfert de propriété, pour que notre coopérative d'habitation devienne propriétaire de la maison et
               du
-              terrain du fameux Manoir.
+              terrain du fameux Manoir. La terre a été achetée il y a 6 ans au nom de 2 membres, Arielle et Vincent,
+              avec l'intention de transférer la propriété vers une forme légale collective.
             </p>
             <p>
-              65 acres, 1/3 en champs dont 5 acres en culture maraîchère, et 2/3 en forêt; une maison de 7 chambres, une
+              La propriété fait 65 acres, 1/3 en champs dont 5 acres en culture maraîchère, et 2/3 en forêt; une maison
+              de 7 chambres, une
               grange, un chalet; une haie-brise-vent en partie comestible, 12 pommiers matures et un jeune verger,
               plusieurs
               autres arbustes fruitiers et arbres à noix fraîchement planté; et une deuxième terre de 25 acres de forêt
@@ -177,7 +180,7 @@
                 sympathisant-e-s de notre projet… et on leur donne l’argent des intérêts à elleux au lieu d’une banque!
               </li>
               <li>
-                Lorsqu’on aura 125 000$ en prêts (ou 125 personnes qui nous prêtent 1000$, ou 25 personnes qui nous
+                Lorsqu’on aura 190 000$ en prêts (ou 190 personnes qui nous prêtent 1000$, ou 19 personnes qui nous
                 prêtent
                 10
                 000$) on pourra passer chez le notaire pour le transfert de propriété! Enfin!
@@ -230,44 +233,22 @@
                 <template v-slot:default>
                   <thead>
                   <tr>
-                    <th class="text-right" colspan="2">
-                      Taux d'intérêt moyen
-                    </th>
-                    <th class="text-center">
-                      Total intérêts
-                    </th>
-                    <th class="text-center ml-2 mr-2"></th>
                     <th class="text-center" colspan="2">
                       Taux d'intérêt progressif
                     </th>
                     <th class="text-center">
                       Intérêt annuel
                     </th>
+                    <th class="text-center">
+                      Cumul des intérêts
+                    </th>
+                    <th class="text-center ml-2 mr-2">
+                      Taux d'intérêt moyen
+                    </th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
-                    <td>
-                      Durée du prêt
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="ml-2 mr-2"></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      1 an
-                    </td>
-                    <td class="text-center">
-                      1,00%
-                    </td>
-                    <td class="text-center">
-                      10,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
                     <td class="text-left">
                       1ere année
                     </td>
@@ -277,20 +258,16 @@
                     <td class="text-center">
                       10,00$
                     </td>
+                    <td class="text-center">
+                      10,00$
+                    </td>
+                    <td class="text-center">
+                      1,00%
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      2 ans
-                    </td>
-                    <td class="text-center">
-                      1,50%
-                    </td>
-                    <td class="text-center">
-                      30,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="text-left">
-                      2e année
+                      2<sup>e</sup> année
                     </td>
                     <td class="text-center">
                       2,00%
@@ -298,20 +275,16 @@
                     <td class="text-center">
                       20,00$
                     </td>
+                    <td class="text-center">
+                      30,00$
+                    </td>
+                    <td class="text-center">
+                      1,50%
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      3 ans
-                    </td>
-                    <td class="text-center">
-                      2,00%
-                    </td>
-                    <td class="text-center">
-                      60,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="text-left">
-                      3e année
+                      3<sup>e</sup> année
                     </td>
                     <td class="text-center">
                       3,00%
@@ -319,20 +292,16 @@
                     <td class="text-center">
                       30,00$
                     </td>
+                    <td class="text-center">
+                      60,00$
+                    </td>
+                    <td class="text-center">
+                      2,00%
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      4 ans
-                    </td>
-                    <td class="text-center">
-                      2,50%
-                    </td>
-                    <td class="text-center">
-                      100,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="text-left">
-                      4e année
+                      4<sup>e</sup> année
                     </td>
                     <td class="text-center">
                       4,00%
@@ -340,20 +309,16 @@
                     <td class="text-center">
                       40,00$
                     </td>
+                    <td class="text-center">
+                      100,00$
+                    </td>
+                    <td class="text-center">
+                      2,50%
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      5 ans
-                    </td>
-                    <td class="text-center">
-                      3,00%
-                    </td>
-                    <td class="text-center">
-                      150,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="text-left">
-                      5e année
+                      5<sup>e</sup> année
                     </td>
                     <td class="text-center">
                       5,00%
@@ -361,20 +326,16 @@
                     <td class="text-center">
                       50,00$
                     </td>
+                    <td class="text-center">
+                      150,00$
+                    </td>
+                    <td class="text-center">
+                      3,00%
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      6 ans
-                    </td>
-                    <td class="text-center">
-                      3,50%
-                    </td>
-                    <td class="text-center">
-                      210,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="text-left">
-                      6e année
+                      6<sup>e</sup> année
                     </td>
                     <td class="text-center">
                       6,00%
@@ -382,20 +343,16 @@
                     <td class="text-center">
                       60,00$
                     </td>
+                    <td class="text-center">
+                      210,00$
+                    </td>
+                    <td class="text-center">
+                      3,50%
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      7 ans
-                    </td>
-                    <td class="text-center">
-                      4,00%
-                    </td>
-                    <td class="text-center">
-                      280,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="text-left">
-                      7e année
+                      7<sup>e</sup> année
                     </td>
                     <td class="text-center">
                       7,00%
@@ -403,20 +360,16 @@
                     <td class="text-center">
                       70,00$
                     </td>
+                    <td class="text-center">
+                      280,00$
+                    </td>
+                    <td class="text-center">
+                      4,00%
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      8 ans
-                    </td>
-                    <td class="text-center">
-                      4,50%
-                    </td>
-                    <td class="text-center">
-                      360,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="text-left">
-                      8e année
+                      8<sup>e</sup> année
                     </td>
                     <td class="text-center">
                       8,00%
@@ -424,20 +377,16 @@
                     <td class="text-center">
                       80,00$
                     </td>
+                    <td class="text-center">
+                      360,00$
+                    </td>
+                    <td class="text-center">
+                      4,50%
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      9 ans
-                    </td>
-                    <td class="text-center">
-                      5,00%
-                    </td>
-                    <td class="text-center">
-                      450,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="text-left">
-                      9e année
+                      9<sup>e</sup> année
                     </td>
                     <td class="text-center">
                       9,00%
@@ -445,26 +394,28 @@
                     <td class="text-center">
                       90,00$
                     </td>
+                    <td class="text-center">
+                      450,00$
+                    </td>
+                    <td class="text-center">
+                      5,00%
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      10 ans
-                    </td>
-                    <td class="text-center">
-                      5,50%
-                    </td>
-                    <td class="text-center">
-                      555,00$
-                    </td>
-                    <td class="ml-2 mr-2"></td>
-                    <td class="text-left">
-                      10e année
+                      10<sup>e</sup> année
                     </td>
                     <td class="text-center">
                       10,00%
                     </td>
                     <td class="text-center">
                       100,00$
+                    </td>
+                    <td class="text-center">
+                      550,00$
+                    </td>
+                    <td class="text-center">
+                      5,50%
                     </td>
                   </tr>
                   </tbody>
@@ -547,6 +498,9 @@
         </v-card>
       </v-col>
       <v-col cols="12" lg="3" class="text-left body-1">
+        <h4 class="text-center mb-4">
+          Forfaits en tranche de 1000$
+        </h4>
         <v-row v-for="forfait in forfaits" :key="forfait.duration">
           <v-col cols="12">
             <v-card color="transparent">
@@ -581,7 +535,8 @@
     </v-row>
     <v-row class="mt-12">
       <v-col cols="12">
-        <v-btn color="secondary" x-large href="https://docs.google.com/forms/d/e/1FAIpQLSf0oX-4Pq8Oha0VW3RrBbaO7v0YUkrg-K9TsYi3E_0BEZvtEA/viewform?ts=60622511&gxids=7628">
+        <v-btn color="secondary" x-large
+               href="https://docs.google.com/forms/d/e/1FAIpQLSf0oX-4Pq8Oha0VW3RrBbaO7v0YUkrg-K9TsYi3E_0BEZvtEA/viewform?ts=60622511&gxids=7628">
           Je soutiens ce projet
         </v-btn>
       </v-col>
@@ -631,49 +586,49 @@ export default {
         delivery: "Octobre 2031",
         interest: "5,50%",
         stock: 0,
-        totalStock: 10
+        totalStock: 104
       },
         {
           duration: 9,
           delivery: "Octobre 2030",
           interest: "5,00%",
           stock: 0,
-          totalStock: 14
+          totalStock: 6
         },
         {
           duration: 8,
           delivery: "Octobre 2029",
           interest: "4,50%",
           stock: 0,
-          totalStock: 13
+          totalStock: 7
         },
         {
           duration: 7,
           delivery: "Octobre 2028",
           interest: "4,00%",
           stock: 0,
-          totalStock: 12
+          totalStock: 8
         },
         {
           duration: 6,
           delivery: "Octobre 2027",
           interest: "3,50%",
           stock: 0,
-          totalStock: 12
+          totalStock: 8
         },
         {
           duration: 5,
           delivery: "Octobre 2026",
           interest: "3,00%",
           stock: 0,
-          totalStock: 12
+          totalStock: 9
         },
         {
           duration: 4,
           delivery: "Octobre 2025",
           interest: "2,50%",
           stock: 0,
-          totalStock: 12,
+          totalStock: 10,
           condition: 60
         },
         {
@@ -681,7 +636,7 @@ export default {
           delivery: "Octobre 2024",
           interest: "2,00%",
           stock: 0,
-          totalStock: 13,
+          totalStock: 11,
           condition: 70
         },
         {
