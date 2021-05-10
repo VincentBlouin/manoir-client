@@ -14,9 +14,10 @@
       </v-col>
     </v-row>
     <v-row class="h-center">
-      <v-col cols="12" xl="6">
+      <v-col cols="12" xl="6" class="h-center">
         <v-img
             src="https://manoir.community/wp-content/uploads/2021/02/dessin-judith.jpg"
+            max-width="600"
         >
         </v-img>
         <!--        <iframe width="560" height="315" src="https://www.youtube.com/embed/cICr-qMmp7Q" frameborder="0"-->
