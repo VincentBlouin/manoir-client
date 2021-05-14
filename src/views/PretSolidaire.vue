@@ -450,6 +450,21 @@
                 Quelqu’un pourrait signer et être « garant de notre prêt ».
               </li>
             </ul>
+            <h4 class="mt-3">
+              Dissolution
+            </h4>
+            <ul>
+              <li>
+                Nous avons adopté un plan en cas de dissolution du collectif du Manoir. En gros, l’idée serait de vendre
+                la
+                maison et tous les biens, et d’utiliser les sous de la vente pour rembourser nos engagements financiers.
+                Nous
+                avons aussi réfléchi à comment serait distribué les sous advenant qu’il reste de l’argent après le
+                remboursement
+                des prêts, d’une manière qui permette de soutenir la continuité de la vision, ainsi que de reconnaître
+                équitablement la contribution de ses membres à travers son histoire. Voir le document pour les détails.
+              </li>
+            </ul>
             <h4 class="mb-3 mt-3">
               Feu
             </h4>
@@ -470,21 +485,6 @@
               </li>
               <li>
                 On fait aussi attention à ce qu'il n'y ait pas de feu à la maison: on a des détecteurs de fumée dans chaque chambre, et il y a quelqu’un à la maison presque en tout temps!
-              </li>
-            </ul>
-            <h4 class="mt-3">
-              Dissolution
-            </h4>
-            <ul>
-              <li>
-                Nous avons adopté un plan en cas de dissolution du collectif du Manoir. En gros, l’idée serait de vendre
-                la
-                maison et tous les biens, et d’utiliser les sous de la vente pour rembourser nos engagements financiers.
-                Nous
-                avons aussi réfléchi à comment serait distribué les sous advenant qu’il reste de l’argent après le
-                remboursement
-                des prêts, d’une manière qui permette de soutenir la continuité de la vision, ainsi que de reconnaître
-                équitablement la contribution de ses membres à travers son histoire. Voir le document pour les détails.
               </li>
             </ul>
           </v-card-text>
