@@ -1,6 +1,6 @@
 {
   "name": "manoir.community",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -15,7 +15,7 @@
     "vue": "^2.6.12",
     "vue-infinite-loading": "^2.4.5",
     "vue-router": "3.5.1",
-    "vuetify": "^2.4.11"
+    "vuetify": "^2.5.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.0",

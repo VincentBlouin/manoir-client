@@ -207,7 +207,7 @@
                 Vous choisissez pendant combien d’années vous souhaitez vous engager à nous prêter de l’argent. Plus
                 vous
                 nous
-                prêtez longtemps, plus le taux d’intérêt que vous en tiré sera élevé.
+                prêtez longtemps, plus le taux d’intérêt que vous en tirerez sera élevé.
               </li>
               <li>
                 Le taux d’intérêt est progressif, c’est-à-dire qu’il augmente à chaque année : 1% la première année, 2%
@@ -221,9 +221,7 @@
                 à son échéance.
               </li>
               <li>
-                Nous prévoyons rembourser de 12 à 14 prêts par année, et estimons avoir terminé de rembourser tous nos
-                prêts
-                d’ici 10 ans.
+                Nous prévoyons rembourser de 6 à 14 prêts par année.
               </li>
             </ul>
             <v-card color="white" class="mt-4 mb-4">
@@ -453,7 +451,7 @@
               </li>
             </ul>
             <h4 class="mb-3 mt-3">
-              Feu!
+              Feu
             </h4>
             <ul>
               <li>
@@ -468,16 +466,10 @@
                 se loger en attendant.
               </li>
               <li>
-                Cela risque d’affecter nos capacité de payer, et de rembourser les prêts selon l’échéance.
+                Advenant un tel scénario catastrophe, nous ferions certainement appel à la solidarité de la communauté élargie pour aller chercher de l'aide à tous les niveaux.
               </li>
               <li>
-                Advenant une dissolution, par exemple, il n’y aurait plus de maison à vendre, seulement une terre et
-                possiblement une grange, ce qui risque de diminuer drastiquement la valeur immobilière (!), et
-                potentiellement
-                nous empêcher de rembourser les prêts.
-              </li>
-              <li>
-                On a des détecteurs de fumée dans chaque chambre, et il y a quelqu’un à la maison presque en tout temps!
+                On fait aussi attention à ce qu'il n'y ait pas de feu à la maison: on a des détecteurs de fumée dans chaque chambre, et il y a quelqu’un à la maison presque en tout temps!
               </li>
             </ul>
             <h4 class="mt-3">
