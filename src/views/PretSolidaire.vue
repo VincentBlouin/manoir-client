@@ -446,9 +446,6 @@
                 arrivent à
                 échéance cette année.
               </li>
-              <li>
-                Quelqu’un pourrait signer et être « garant de notre prêt ».
-              </li>
             </ul>
             <h4 class="mt-3">
               Dissolution
