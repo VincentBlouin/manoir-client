@@ -224,6 +224,23 @@
                 Nous prévoyons rembourser de 6 à 14 prêts par année.
               </li>
             </ul>
+            <v-card color="transparent" class="mt-6 mb-6">
+              <v-card-title class="subtitle-1">
+                Calculateur d'intérêts
+              </v-card-title>
+              <v-card-text class="pb-0">
+                <v-text-field v-model="montant" type="number" label="Montant Prêté"></v-text-field>
+                <v-select
+                    :items="anneesPret"
+                    v-model="nbAnneesPret"
+                    label="Années"
+                ></v-select>
+              </v-card-text>
+              <v-card-text class="subtitle-1 font-weight-bold pt-0">
+                Intérêts total:
+                {{ formatPrice(interetTotal) }}$
+              </v-card-text>
+            </v-card>
             <v-card color="white" class="mt-4 mb-4">
               <v-card-subtitle class="text-center body-1">
                 Voici à quoi ça ressemble pour un prêt de 1000$
@@ -478,10 +495,12 @@
                 se loger en attendant.
               </li>
               <li>
-                Advenant un tel scénario catastrophe, nous ferions certainement appel à la solidarité de la communauté élargie pour aller chercher de l'aide à tous les niveaux.
+                Advenant un tel scénario catastrophe, nous ferions certainement appel à la solidarité de la communauté
+                élargie pour aller chercher de l'aide à tous les niveaux.
               </li>
               <li>
-                On fait aussi attention à ce qu'il n'y ait pas de feu à la maison: on a des détecteurs de fumée dans chaque chambre, et il y a quelqu’un à la maison presque en tout temps!
+                On fait aussi attention à ce qu'il n'y ait pas de feu à la maison: on a des détecteurs de fumée dans
+                chaque chambre, et il y a quelqu’un à la maison presque en tout temps!
               </li>
             </ul>
           </v-card-text>
@@ -542,6 +561,50 @@ export default {
   },
   data: function () {
     return {
+      montant: 0,
+      anneesPret: [{
+        text: '1',
+        value: 1
+      },
+        {
+          text: '2',
+          value: 2
+        },
+        {
+          text: '3',
+          value: 3
+        },
+        {
+          text: '4',
+          value: 4
+        },
+        {
+          text: '5',
+          value: 5
+        },
+        {
+          text: '6',
+          value: 6
+        },
+        {
+          text: '7',
+          value: 7
+        },
+        {
+          text: '8',
+          value: 8
+        },
+        {
+          text: '9',
+          value: 9
+        },
+        {
+          text: '10',
+          value: 10
+        },
+      ],
+      interetMoyen: [1, 1.5, 2.0, 2.5, 3, 3.5, 4, 4.5, 5, 5.5],
+      nbAnneesPret: 5,
       moneyReceived: 42000,
       objective: 190000,
       percentageReceived: null,
@@ -640,6 +703,11 @@ export default {
       const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
       const diffDays = Math.ceil((secondDate - firstDate) / oneDay);
       return Math.max(0, diffDays);
+    }
+  },
+  computed: {
+    interetTotal: function () {
+      return (this.montant * this.nbAnneesPret * (this.interetMoyen[this.nbAnneesPret -1] / 100)).toFixed(2);
     }
   }
 }
