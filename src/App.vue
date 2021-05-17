@@ -384,6 +384,28 @@ body {
   }
 }
 
+.v-application .custom-page {
+  * {
+    font-size: 1.1rem;
+  }
+
+  td{
+    sup{
+      font-size: 0.875rem;
+    }
+  }
+  .post-content {
+    .v-card__text, p, li, .subtitle-1, .v-card__title{
+      line-height: 2;
+      font-size: 1.05em !important;
+      color: #2c3e50 !important;
+    }
+    .v-card__title{
+      font-size: 1.1em !important;
+    }
+  }
+}
+
 .v-card__title {
   word-break: inherit !important;
 }

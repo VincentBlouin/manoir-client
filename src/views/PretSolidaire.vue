@@ -1,12 +1,12 @@
 <template>
-  <Page>
+  <Page class="custom-page">
     <v-row>
       <v-col cols="12" class="h-center">
         <v-card flat color="transparent" max-width="600">
-          <v-card-title class="h-center mb-4">
+          <v-card-title class="h-center mb-4 text-h6">
             Prêt solidaire pour l'acquisition du Manoir.
           </v-card-title>
-          <v-card-subtitle class="body-1 text-justify">
+          <v-card-subtitle class="subtitle-1 text-justify" style="font-size: 1.1rem !important;">
             Prêtez-nous de l'argent pour que notre coopérative d'habitation devienne propriétaire
             de la maison et du terrain du fameux Manoir.
           </v-card-subtitle>
@@ -63,7 +63,7 @@
       </v-col>
     </v-row>
     <v-row class="h-center">
-      <v-col cols="12" lg="9" class="text-left body-1">
+      <v-col cols="12" lg="9" class="text-left body-1 post-content">
         <v-card color="transparent" flat>
           <v-card-title>
             Le projet
@@ -707,7 +707,7 @@ export default {
   },
   computed: {
     interetTotal: function () {
-      return (this.montant * this.nbAnneesPret * (this.interetMoyen[this.nbAnneesPret -1] / 100)).toFixed(2);
+      return (this.montant * this.nbAnneesPret * (this.interetMoyen[this.nbAnneesPret - 1] / 100)).toFixed(2);
     }
   }
 }
