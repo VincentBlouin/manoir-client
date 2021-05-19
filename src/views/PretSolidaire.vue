@@ -476,7 +476,7 @@
                 avons aussi réfléchi à comment serait distribué les sous advenant qu’il reste de l’argent après le
                 remboursement
                 des prêts, d’une manière qui permette de soutenir la continuité de la vision, ainsi que de reconnaître
-                équitablement la contribution de ses membres à travers son histoire. Voir le document pour les détails.
+                équitablement la contribution de ses membres à travers son histoire.
               </li>
             </ul>
             <h4 class="mb-3 mt-3">
