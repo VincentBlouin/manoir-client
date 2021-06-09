@@ -605,17 +605,17 @@ export default {
       ],
       interetMoyen: [1, 1.5, 2.0, 2.5, 3, 3.5, 4, 4.5, 5, 5.5],
       nbAnneesPret: 5,
-      moneyReceived: 98000,
+      moneyReceived: 100000,
       objective: 190000,
       percentageReceived: null,
-      nbLender: 9,
+      nbLender: 10,
       daysLeft: 0,
       tabs: null,
       forfaits: [{
         duration: 10,
         delivery: "Octobre 2031",
         interest: "5,50%",
-        stock: 82,
+        stock: 83,
         totalStock: 104
       },
         {
@@ -650,7 +650,7 @@ export default {
           duration: 5,
           delivery: "Octobre 2026",
           interest: "3,00%",
-          stock: 0,
+          stock: 1,
           totalStock: 9
         },
         {
