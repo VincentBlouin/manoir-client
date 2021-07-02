@@ -658,16 +658,14 @@ export default {
           delivery: "Octobre 2025",
           interest: "2,50%",
           stock: 10,
-          totalStock: 10,
-          condition: 60
+          totalStock: 10
         },
         {
           duration: 3,
           delivery: "Octobre 2024",
           interest: "2,00%",
           stock: 5,
-          totalStock: 11,
-          condition: 70
+          totalStock: 11
         },
         {
           duration: 2,
@@ -675,7 +673,7 @@ export default {
           interest: "1,50%",
           stock: 0,
           totalStock: 13,
-          condition: 80
+          condition: 85
         },
         {
           duration: 1,
