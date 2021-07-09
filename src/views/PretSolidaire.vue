@@ -629,7 +629,7 @@ export default {
           duration: 8,
           delivery: "Octobre 2029",
           interest: "4,50%",
-          stock: 3,
+          stock: 7,
           totalStock: 7
         },
         {
@@ -643,7 +643,7 @@ export default {
           duration: 6,
           delivery: "Octobre 2027",
           interest: "3,50%",
-          stock: 7,
+          stock: 8,
           totalStock: 8
         },
         {
