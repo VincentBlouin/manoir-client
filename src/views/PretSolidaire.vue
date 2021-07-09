@@ -608,7 +608,7 @@ export default {
       moneyReceived: 158000,
       objective: 190000,
       percentageReceived: null,
-      nbLender: 19,
+      nbLender: 20,
       daysLeft: 0,
       tabs: null,
       forfaits: [{
