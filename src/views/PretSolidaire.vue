@@ -605,10 +605,10 @@ export default {
       ],
       interetMoyen: [1, 1.5, 2.0, 2.5, 3, 3.5, 4, 4.5, 5, 5.5],
       nbAnneesPret: 5,
-      moneyReceived: 170000,
+      moneyReceived: 176000,
       objective: 190000,
       percentageReceived: null,
-      nbLender: 24,
+      nbLender: 28,
       daysLeft: 0,
       tabs: null,
       forfaits: [{
@@ -657,7 +657,7 @@ export default {
           duration: 4,
           delivery: "Octobre 2025",
           interest: "2,50%",
-          stock: 10,
+          stock: 3,
           totalStock: 10
         },
         {
@@ -671,14 +671,14 @@ export default {
           duration: 2,
           delivery: "Octobre 2023",
           interest: "1,50%",
-          stock: 7,
+          stock: 13,
           totalStock: 13
         },
         {
           duration: 1,
           delivery: "Octobre 2022",
           interest: "1,00%",
-          stock: 5,
+          stock: 13,
           totalStock: 14
         },
       ]
