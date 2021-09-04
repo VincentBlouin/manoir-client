@@ -7,7 +7,17 @@
             max-height="600"
             v-if="caracteristique._embedded"
             :src="caracteristique._embedded['wp:featuredmedia']['0'].source_url"
-        ></v-img>
+        >
+          <v-overlay
+              absolute
+              :value="true"
+              opacity="0.15"
+              color="transparent"
+              v-if="caracteristique.type && caracteristique.type === 'non-caracteristique'"
+          >
+            <v-icon size="450" color="error" style="opacity: 0.3">highlight_off</v-icon>
+          </v-overlay>
+        </v-img>
         <h1 v-html="caracteristique.title.rendered" class="pb-6 pt-6"></h1>
         <div
             v-html="caracteristique.content.rendered"

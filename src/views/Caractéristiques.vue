@@ -87,8 +87,16 @@
               height="250"
               v-if="nonCaracteristique.imageUrl"
               :src="nonCaracteristique.imageUrl"
-          ></v-img>
-
+          >
+            <v-overlay
+                absolute
+                :value="true"
+                opacity="0.15"
+                color="transparent"
+            >
+              <v-icon size="150" color="error" style="opacity: 0.3">highlight_off</v-icon>
+            </v-overlay>
+          </v-img>
           <v-card-title
               v-html="nonCaracteristique.title.rendered"
           ></v-card-title>
