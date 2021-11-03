@@ -6,6 +6,20 @@
           <v-card-title class="h-center mb-4 text-h6">
             Prêt solidaire pour l'acquisition du Manoir.
           </v-card-title>
+          <v-col cols="12">
+            <v-alert
+                outlined
+                icon="auto_awesome"
+                color="secondary"
+            >
+
+          <span class="text-h6">
+            Objectif atteint !
+          </span>
+              <br>
+              Merci à nos 30 prêteurs !
+            </v-alert>
+          </v-col>
           <v-card-subtitle class="subtitle-1 text-justify" style="font-size: 1.1rem !important;">
             Prêtez-nous de l'argent pour que notre coopérative d'habitation devienne propriétaire
             de la maison et du terrain du fameux Manoir.
@@ -56,10 +70,10 @@
     </v-row>
     <v-row class="mt-12">
       <v-col cols="12">
-        <v-btn color="secondary" x-large
-               href="https://docs.google.com/forms/d/e/1FAIpQLSf0oX-4Pq8Oha0VW3RrBbaO7v0YUkrg-K9TsYi3E_0BEZvtEA/viewform?ts=60622511&gxids=7628">
-          Je soutiens ce projet
-        </v-btn>
+<!--        <v-btn color="secondary" x-large-->
+<!--               href="https://docs.google.com/forms/d/e/1FAIpQLSf0oX-4Pq8Oha0VW3RrBbaO7v0YUkrg-K9TsYi3E_0BEZvtEA/viewform?ts=60622511&gxids=7628">-->
+<!--          Je soutiens ce projet-->
+<!--        </v-btn>-->
       </v-col>
     </v-row>
     <v-row class="h-center">
@@ -605,17 +619,17 @@ export default {
       ],
       interetMoyen: [1, 1.5, 2.0, 2.5, 3, 3.5, 4, 4.5, 5, 5.5],
       nbAnneesPret: 5,
-      moneyReceived: 176000,
+      moneyReceived: 190000,
       objective: 190000,
       percentageReceived: null,
-      nbLender: 28,
+      nbLender: 30,
       daysLeft: 0,
       tabs: null,
       forfaits: [{
         duration: 10,
         delivery: "Octobre 2031",
         interest: "5,50%",
-        stock: 94,
+        stock: 104,
         totalStock: 104
       },
         {
@@ -657,7 +671,7 @@ export default {
           duration: 4,
           delivery: "Octobre 2025",
           interest: "2,50%",
-          stock: 3,
+          stock: 10,
           totalStock: 10
         },
         {
