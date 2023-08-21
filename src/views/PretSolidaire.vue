@@ -1,5 +1,5 @@
 <template>
-  <Page class="custom-page">
+  <PageWrap class="custom-page">
     <v-row>
       <v-col cols="12" class="h-center">
         <v-card flat color="transparent" max-width="600">
@@ -564,14 +564,14 @@
         </v-btn>
       </v-col>
     </v-row>
-  </Page>
+  </PageWrap>
 </template>
 
 <script>
 export default {
   name: "PretSolidaire",
   components: {
-    Page: () => import('@/components/Page')
+    PageWrap: () => import('@/components/PageWrap')
   },
   data: function () {
     return {

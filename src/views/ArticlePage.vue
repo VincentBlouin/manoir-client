@@ -58,7 +58,7 @@ import DateUtil from "@/DateUtil";
 import PostFormat from "@/PostFormat";
 
 export default {
-  name: "Article",
+  name: "ArticlePage",
   data: function () {
     return {
       article: null,

@@ -67,19 +67,19 @@
       </v-col>
     </v-row>
 
-    <Images></Images>
-    <Caracteristiques></Caracteristiques>
-    <Articles></Articles>
+    <ImagesPage></ImagesPage>
+    <CaracteristiquesPage></CaracteristiquesPage>
+    <ArticlesPage></ArticlesPage>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "HomePage",
   components: {
-    Caracteristiques: () => import("@/views/Caractéristiques"),
-    Articles: () => import("@/views/Articles"),
-    Images: () => import("@/views/Images"),
+    CaracteristiquesPage: () => import("@/views/CaractéristiquesPage"),
+    ArticlesPage: () => import("@/views/ArticlesPage"),
+    ImagesPage: () => import("@/views/ImagesPage"),
   }
 };
 </script>

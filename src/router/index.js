@@ -1,34 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import HomePage from '../views/HomePage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: Home
+        name: 'HomePage',
+        component: HomePage
     },
     {
         path: '/caracteristique/:slug/',
         name: 'Caracteristique',
-        component: () => import('../views/Caractéristique')
+        component: () => import('../views/CaractéristiquePage')
     },
     {
         path: '/non-caracteristique/:slug/',
         name: 'NonCaracteristique',
-        component: () => import('../views/Caractéristique')
+        component: () => import('../views/CaractéristiquePage')
     },
     {
         path: '/caracteristiques',
         name: 'Caracteristiques',
-        component: () => import('../views/Caractéristiques')
+        component: () => import('../views/CaractéristiquesPage')
     },
     {
         path: '/articles',
         name: 'Articles',
-        component: () => import('../views/Articles')
+        component: () => import('../views/ArticlesPage')
     },
     {
         path: '/pret-solidaire',
@@ -43,12 +43,12 @@ const routes = [
     {
         path: '/images',
         name: 'Images',
-        component: () => import('../views/Images')
+        component: () => import('../views/ImagesPage')
     },
     {
         path: '/:slug/',
         name: 'Article',
-        component: () => import('../views/Article')
+        component: () => import('../views/ArticlePage')
     }
 ]
 

@@ -154,7 +154,7 @@ import Service from "@/Service";
 import PostFormat from "@/PostFormat";
 
 export default {
-  name: "Caractéristiques.vue",
+  name: "CaractéristiquesPage",
   data: function () {
     return {
       caracteristiques: [],

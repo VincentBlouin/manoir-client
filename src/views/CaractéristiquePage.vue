@@ -30,7 +30,7 @@
         </v-btn>
       </v-col>
     </v-row>
-    <Articles :tagId="tagId" v-if="tagId !== null"></Articles>
+    <ArticlesPage :tagId="tagId" v-if="tagId !== null"></ArticlesPage>
   </div>
 </template>
 
@@ -38,7 +38,7 @@
 import Service from "@/Service";
 
 export default {
-  name: "Caractéristique.vue",
+  name: "CaractéristiquePage",
   data: function () {
     return {
       caracteristique: null,
@@ -46,7 +46,7 @@ export default {
     };
   },
   components: {
-    Articles: () => import('@/views/Articles')
+    ArticlesPage: () => import('@/views/ArticlesPage')
   },
   mounted: async function () {
     const postType =

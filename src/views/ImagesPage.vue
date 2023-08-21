@@ -62,7 +62,7 @@
 import Service from "@/Service";
 
 export default {
-  name: "Images",
+  name: "ImagesPage",
   mounted: async function () {
     this.isOnPageFlow = this.$route.name === "Images";
     if (this.$vuetify.breakpoint.smAndDown) {

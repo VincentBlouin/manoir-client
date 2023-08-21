@@ -1,5 +1,5 @@
 <template>
-  <Page class="about custom-page">
+  <PageWrap class="about custom-page">
     <div class="post-content">
       <h2 class="text-left mb-4">À propos</h2>
       <!--    <p>-->
@@ -319,14 +319,14 @@
         </v-expansion-panel>
       </v-expansion-panels>
     </div>
-  </Page>
+  </PageWrap>
 </template>
 
 <script>
 export default {
   name: "LeProjet",
   components: {
-    Page: () => import('@/components/Page')
+    PageWrap: () => import('@/components/PageWrap')
   },
   data: function () {
     return {}

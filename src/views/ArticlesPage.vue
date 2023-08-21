@@ -88,7 +88,7 @@ import PostFormat from "@/PostFormat";
 
 let searchTimeout = null;
 export default {
-  name: "Articles.vue",
+  name: "ArticlesPage",
   props: ['tagId'],
   components: {
     InfiniteLoading,
