@@ -53,7 +53,7 @@
           "allowModifiers": true
         }
       ],
-      "vue/no-v-html": "disable"
+      "vue/no-v-text-v-html-on-component": "warn"
     }
   },
   "browserslist": [
