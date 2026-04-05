@@ -1,5 +1,6 @@
 <template>
   <div>
+    <AnnonceCoop></AnnonceCoop>
     <v-row align-content="center" align="center" class="h-center mt-8 mb-12">
       <v-col cols="12" sm="9" md="8" xl="5" v-if="caracteristique !== null">
         <v-img
@@ -36,6 +37,7 @@
 
 <script>
 import Service from "@/Service";
+import AnnonceCoop from "@/components/AnnonceCoop.vue";
 
 export default {
   name: "CaractéristiquePage",
@@ -46,6 +48,7 @@ export default {
     };
   },
   components: {
+    AnnonceCoop,
     ArticlesPage: () => import('@/views/ArticlesPage')
   },
   mounted: async function () {

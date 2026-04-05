@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <AnnonceCoop></AnnonceCoop>
     <v-row
         class="vh-center pb-4"
         :class="{
@@ -74,9 +75,12 @@
 </template>
 
 <script>
+import AnnonceCoop from "@/components/AnnonceCoop.vue";
+
 export default {
   name: "HomePage",
   components: {
+    AnnonceCoop,
     CaracteristiquesPage: () => import("@/views/CaractéristiquesPage"),
     ArticlesPage: () => import("@/views/ArticlesPage"),
     ImagesPage: () => import("@/views/ImagesPage"),

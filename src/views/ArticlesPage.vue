@@ -5,6 +5,7 @@
       'pb-16': isOnPageFlow,
     }"
   >
+    <AnnonceCoop></AnnonceCoop>
     <h1 class="manoir-font font-weight-thin mt-12 primary-color">
       Articles des membres
     </h1>
@@ -85,12 +86,14 @@
 import Service from "@/Service";
 import InfiniteLoading from "vue-infinite-loading";
 import PostFormat from "@/PostFormat";
+import AnnonceCoop from "@/components/AnnonceCoop.vue";
 
 let searchTimeout = null;
 export default {
   name: "ArticlesPage",
   props: ['tagId'],
   components: {
+    AnnonceCoop,
     InfiniteLoading,
   },
   data: function () {

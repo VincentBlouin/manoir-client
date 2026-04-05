@@ -4,6 +4,7 @@
       'pt-16 pb-16 mt-12': isOnPageFlow
     }"
   >
+    <AnnonceCoop></AnnonceCoop>
     <h1 class="manoir-font font-weight-thin mb-4 primary-color">En Images</h1>
 
     <!--    <v-parallax :src="require('@/assets/maison-devant.jpg')" height="1000"></v-parallax>-->
@@ -60,9 +61,11 @@
 
 <script>
 import Service from "@/Service";
+import AnnonceCoop from "@/components/AnnonceCoop.vue";
 
 export default {
   name: "ImagesPage",
+  components: {AnnonceCoop},
   mounted: async function () {
     this.isOnPageFlow = this.$route.name === "Images";
     if (this.$vuetify.breakpoint.smAndDown) {

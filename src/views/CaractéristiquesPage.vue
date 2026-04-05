@@ -5,6 +5,7 @@
       'pb-16': isOnPageFlow,
     }"
   >
+    <AnnonceCoop></AnnonceCoop>
     <h1 class="manoir-font font-weight-thin mb-4 mt-12 primary-color">
       Ce qui nous caractérise
     </h1>
@@ -152,9 +153,11 @@
 <script>
 import Service from "@/Service";
 import PostFormat from "@/PostFormat";
+import AnnonceCoop from "@/components/AnnonceCoop.vue";
 
 export default {
   name: "CaractéristiquesPage",
+  components: {AnnonceCoop},
   data: function () {
     return {
       caracteristiques: [],
