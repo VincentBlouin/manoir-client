@@ -4,7 +4,7 @@
       'pt-16 pb-16 mt-12': isOnPageFlow
     }"
   >
-    <AnnonceCoop></AnnonceCoop>
+    <AnnonceCoop v-if="showAnnonceCoop"></AnnonceCoop>
     <h1 class="manoir-font font-weight-thin mb-4 primary-color">En Images</h1>
 
     <!--    <v-parallax :src="require('@/assets/maison-devant.jpg')" height="1000"></v-parallax>-->
@@ -65,6 +65,12 @@ import AnnonceCoop from "@/components/AnnonceCoop.vue";
 
 export default {
   name: "ImagesPage",
+  props: {
+    showAnnonceCoop: {
+      type: Boolean,
+      default: true
+    }
+  },
   components: {AnnonceCoop},
   mounted: async function () {
     this.isOnPageFlow = this.$route.name === "Images";

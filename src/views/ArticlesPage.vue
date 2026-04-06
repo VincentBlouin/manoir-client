@@ -5,7 +5,7 @@
       'pb-16': isOnPageFlow,
     }"
   >
-    <AnnonceCoop></AnnonceCoop>
+    <AnnonceCoop v-if="showAnnonceCoop"></AnnonceCoop>
     <h1 class="manoir-font font-weight-thin mt-12 primary-color">
       Articles des membres
     </h1>
@@ -91,7 +91,15 @@ import AnnonceCoop from "@/components/AnnonceCoop.vue";
 let searchTimeout = null;
 export default {
   name: "ArticlesPage",
-  props: ['tagId'],
+  props: {
+    'tagId': {
+      type: String
+    },
+    showAnnonceCoop: {
+      type: Boolean,
+      default: true
+    }
+  },
   components: {
     AnnonceCoop,
     InfiniteLoading,

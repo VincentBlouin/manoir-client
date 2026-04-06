@@ -5,7 +5,7 @@
       'pb-16': isOnPageFlow,
     }"
   >
-    <AnnonceCoop></AnnonceCoop>
+    <AnnonceCoop v-if="showAnnonceCoop"></AnnonceCoop>
     <h1 class="manoir-font font-weight-thin mb-4 mt-12 primary-color">
       Ce qui nous caractérise
     </h1>
@@ -158,6 +158,12 @@ import AnnonceCoop from "@/components/AnnonceCoop.vue";
 export default {
   name: "CaractéristiquesPage",
   components: {AnnonceCoop},
+  props: {
+    showAnnonceCoop: {
+      type: Boolean,
+      default: true
+    }
+  },
   data: function () {
     return {
       caracteristiques: [],

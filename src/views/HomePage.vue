@@ -68,9 +68,9 @@
       </v-col>
     </v-row>
 
-    <ImagesPage></ImagesPage>
-    <CaracteristiquesPage></CaracteristiquesPage>
-    <ArticlesPage></ArticlesPage>
+    <ImagesPage :show-annonce-coop="false"></ImagesPage>
+    <CaracteristiquesPage :show-annonce-coop="false"></CaracteristiquesPage>
+    <ArticlesPage :show-annonce-coop="false"></ArticlesPage>
   </div>
 </template>
 
